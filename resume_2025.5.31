@@ -4117,7 +4117,7 @@ html[lang="en"] .zh {
         } else {
             // Happy responses
             const happyResponses = [
-                { sound: '😸 喵叽~', class: 'happy' },
+                { sound: '😸 哈！！！！！！！！！', class: 'happy' },
                 { sound: '😽 mua~', class: 'nuzzle' },
                 { sound: '😹 666哥们~', class: 'happy' }
             ];
