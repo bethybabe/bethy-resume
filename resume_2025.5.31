@@ -1777,7 +1777,7 @@ html[lang="en"] .zh {
     
     /* 猫猫聊天气泡在移动端的优化 */
     .cat-sound {
-        top: -75px !important; /* 适当上移，避免被遮挡 */
+        top: -90px !important; /* 适当上移，避免被遮挡 */
         right: -25px !important;
         font-size: 1rem !important; 
         padding: 12px 15px !important; 
@@ -2484,19 +2484,19 @@ html[lang="en"] .zh {
                 <div class="nav-container">
                     <div class="nav-tabs">
                         <div class="nav-tab active" data-section="home">
-                            <span class="zh">首页</span>
+                            <span class="zh">黄澜の首页</span>
                             <span class="en">Home</span>
                         </div>
                         <div class="nav-tab" data-section="about">
-                            <span class="zh">关于</span>
+                            <span class="zh">关于我</span>
                             <span class="en">About</span>
                         </div>
                         <div class="nav-tab" data-section="projects">
-                            <span class="zh">项目</span>
+                            <span class="zh">工作&项目</span>
                             <span class="en">Projects</span>
                         </div>
                         <div class="nav-tab" data-section="publications">
-                            <span class="zh">发表</span>
+                            <span class="zh">学术</span>
                             <span class="en">Publications</span>
                         </div>
                         <div class="nav-tab" data-section="seo">
@@ -2508,7 +2508,7 @@ html[lang="en"] .zh {
                             <span class="en">Media</span>
                         </div>
                         <div class="nav-tab" data-section="contact">
-                            <span class="zh">联系</span>
+                            <span class="zh">联系我</span>
                             <span class="en">Contact</span>
                         </div>
                     </div>
