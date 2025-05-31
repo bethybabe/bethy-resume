@@ -2298,11 +2298,11 @@ html[lang="en"] .zh {
                 <div class="hero-container">
                         <div class="comic-bubble main-intro">
                             <h1>
-                                <span class="zh">你好！我是黄澜</span>
+                                <span class="zh">(｡･∀･)ﾉﾞ嗨！我是黄澜</span>
                                 <span class="en">Hi! I'm Huang Lan</span>
                             </h1>
                             <p class="tagline">
-                                <span class="zh">SEO专家 | 内容创作者 | AI研究者</span>
+                                <span class="zh">SEO优化师 | 内容创作者 | AI+语言学研究者</span>
                                 <span class="en">SEO Expert | Content Creator | AI Researcher</span>
                             </p>
                             <div class="skills-container">
@@ -2319,7 +2319,7 @@ html[lang="en"] .zh {
                                     <span class="en">SCI Publications</span>
                                 </div>
                                 <div class="skill-bubble">
-                                    <span class="zh">2万+粉丝</span>
+                                    <span class="zh">2w+粉丝</span>
                                     <span class="en">20K+ Followers</span>
                                 </div>
                             </div>
@@ -2373,12 +2373,12 @@ html[lang="en"] .zh {
                         <div class="education-item">
                             <div class="year">2019-2023</div>
                             <div class="degree">
-                                <span class="zh">英语语言文学+经济（辅修）本科</span>
+                                <span class="zh">英语语言文学+经济（辅修） 本科</span>
                                 <span class="en">Bachelor's in English Language and Literature + Economics (Minor)</span>
                             </div>
                         </div>
                         <div class="publications-note">
-                            <span class="zh">• 发表SCI一区论文（RELC Journal）</span>
+                            <span class="zh">• 发表SCI一区顶刊论文（RELC Journal）</span>
                             <span class="en">• Published SCI Q1 paper (RELC Journal)</span>
                             <br>
                             <span class="zh" style="margin-left: 1em;">• 发表Springer国际会议论文</span>
@@ -2480,7 +2480,7 @@ html[lang="en"] .zh {
                                     <span class="en">Facilitated 8 KOL collaborations, planned 6 community events, gained 140K+ Twitter followers</span>
                                 </li>
                                         <li>
-                                            <span class="zh">作为游戏策划&营销，参与MMORPG游戏的立绘制作、本地化以及关卡世界观NFT等策划（看懂Unity，C#和开发提需对接）</span>
+                                            <span class="zh">作为游戏策划&营销，参与MMORPG游戏的立绘制作、本地化以及关卡世界观NFT等设计策划（熟悉Unity，C#与开发提需对接）</span>
                                             <span class="en">As game planner & marketer, participated in MMORPG artwork creation, localization, and level/worldview NFT planning (Unity, C# development coordination)</span>
                                 </li>
                             </ul>
@@ -2564,7 +2564,7 @@ html[lang="en"] .zh {
             <!-- SEO Works Section -->
             <section id="seo" class="section">
                 <h2 class="section-title">
-                    <span class="zh">SEO作品展示</span>
+                    <span class="zh">SEO部分作品展示</span>
                     <span class="en">SEO Portfolio</span>
                 </h2>
                 <div class="seo-categories">
@@ -4090,8 +4090,8 @@ html[lang="en"] .zh {
     cat.addEventListener('mouseenter', function() {
         lastInteraction = Date.now();
         const greetings = [
-            { sound: '😸 喵~ 你来啦！', class: 'nuzzle' },
-            { sound: '😺 咕噜咕噜~', class: 'happy' },
+            { sound: '😸 喵~ 你来啦！！', class: 'nuzzle' },
+            { sound: '😺 咕噜咕噜咕噜~~~~', class: 'happy' },
             { sound: '🐱 哈基米~', class: 'nuzzle' }
         ];
         const greeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -4113,13 +4113,13 @@ html[lang="en"] .zh {
             clickCount = 0;
         } else if (clickCount === 3) {
             // Scratching animation
-            showCatExpression('🐾 磨爪子~', 'scratching');
+            showCatExpression('🐾 磨爪爪~', 'scratching');
         } else {
             // Happy responses
             const happyResponses = [
                 { sound: '😸 喵~', class: 'happy' },
                 { sound: '😽 mua~', class: 'nuzzle' },
-                { sound: '😹 嘻嘻~', class: 'happy' }
+                { sound: '😹 666哥们~', class: 'happy' }
             ];
             const response = happyResponses[Math.floor(Math.random() * happyResponses.length)];
             showCatExpression(response.sound, response.class);
@@ -4147,7 +4147,7 @@ html[lang="en"] .zh {
     cat.addEventListener('mousedown', function() {
         pressTimer = setTimeout(() => {
             lastInteraction = Date.now();
-            showCatExpression('😴 要睡觉了...', 'sleeping');
+            showCatExpression('😴 好困啊啊要睡觉了...', 'sleeping');
         }, 2000);
     });
     
