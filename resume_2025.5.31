@@ -1,0 +1,4843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huang Lan | SEO Expert & Content Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bubblegum+Sans&family=Comic+Neue:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+    /* Memphis Design Style Variables */
+:root {
+    --primary-yellow: #ffdc5e;
+    --secondary-yellow: #ffd000;
+    --primary-blue: #4f97d2;
+    --secondary-blue: #2a75bc;
+    --accent-blue-light: #8bc9f6;
+    --accent-yellow-light: #fff3c5;
+    --ocean-blue: #1e3a8a;
+    --ocean-light: #3b82f6;
+    --dark-color: #333;
+    --light-color: #fff;
+    --memphis-red: #ff5e5e;
+    --memphis-green: #5eff8f;
+    
+    --border-radius: 8px;
+    --font-main: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+    --font-heading: 'Bangers', 'Impact', 'Arial Black', sans-serif;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Unified Chinese font styling */
+[lang="zh-CN"] {
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'SimSun', sans-serif;
+}
+
+[lang="zh-CN"] .zh {
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'SimSun', sans-serif;
+}
+
+/* Ocean Background with Whales */
+.ocean-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.whale {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    border-radius: 50px 10px 50px 10px;
+    animation: swimAcross 20s linear infinite;
+}
+
+.whale::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    border-radius: 0 50% 50% 0;
+    transform: rotate(45deg);
+}
+
+.whale-1 {
+    top: 20%;
+    animation-duration: 25s;
+    animation-delay: 0s;
+}
+
+.whale-2 {
+    top: 60%;
+    animation-duration: 30s;
+    animation-delay: -10s;
+    transform: scaleX(-1);
+}
+
+@keyframes swimAcross {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: calc(100% + 100px);
+    }
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, rgba(59, 130, 246, 0.3));
+    border-radius: 50% 50% 0 0;
+    animation: waveMotion 8s ease-in-out infinite;
+}
+
+.wave-1 {
+    animation-delay: 0s;
+    opacity: 0.7;
+}
+
+.wave-2 {
+    animation-delay: -2s;
+    opacity: 0.5;
+    height: 80px;
+}
+
+.wave-3 {
+    animation-delay: -4s;
+    opacity: 0.3;
+    height: 60px;
+}
+
+@keyframes waveMotion {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0px);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
+
+/* Splash Screen with Memphis Handwritten Style */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffdc5e 0%, #4f97d2 50%, #87ceeb 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.splash-content {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.handwriting-container {
+    position: relative;
+    margin-bottom: 30px;
+    z-index: 10;
+}
+
+.handwriting-name {
+    font-family: 'Bangers', 'Comic Neue', 'Arial Black', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 4px 4px 0 #4f97d2, 8px 8px 0 #ffdc5e, 12px 12px 20px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px) rotate(-2deg);
+    animation: memphisAppear 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 10;
+    -webkit-text-stroke: 2px #333;
+}
+
+/* Memphis decorative elements - positioned to not overlap text */
+.handwriting-name::before {
+    content: '✦';
+    position: absolute;
+    top: -40px;
+    left: -60px;
+    font-size: 2.5rem;
+    color: #ffdc5e;
+    animation: sparkle 2s ease-in-out infinite;
+    z-index: 1;
+}
+
+.handwriting-name::after {
+    content: '◆';
+    position: absolute;
+    bottom: -25px;
+    right: -50px;
+    font-size: 2rem;
+    color: #ff5e5e;
+    animation: bounce 1.5s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes memphisAppear {
+    0% {
+    opacity: 0;
+        transform: translateY(30px) rotate(-2deg) scale(0.9);
+}
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(-1deg) scale(1);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.3); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Typewriter Effect */
+.typewriter-text {
+    font-family: 'Bangers', 'Comic Neue', 'Arial Black', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 3px 3px 0 #4f97d2, 6px 6px 0 #ffdc5e;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out 1s forwards;
+    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    -webkit-text-stroke: 1px #333;
+    letter-spacing: 2px;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    background-color: #ffffff;
+    width: 4px;
+    height: 1.2em;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+    border: 2px solid #333;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Memphis geometric decorations - positioned away from text */
+.memphis-decoration {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.decoration-1 {
+    top: 10%;
+    left: 10%;
+    width: 50px;
+    height: 50px;
+    background: #ff5e5e;
+    border-radius: 50%;
+    border: 3px solid #333;
+    animation: float 4s ease-in-out infinite;
+}
+
+.decoration-2 {
+    top: 15%;
+    right: 15%;
+    width: 40px;
+    height: 40px;
+    background: #5eff8f;
+    border: 3px solid #333;
+    transform: rotate(45deg);
+    animation: rotate 6s linear infinite;
+}
+
+.decoration-3 {
+    bottom: 15%;
+    left: 12%;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid #ffdc5e;
+    border-top: 3px solid #333;
+    animation: float 5s ease-in-out infinite reverse;
+    filter: drop-shadow(0 0 0 #333);
+}
+
+.decoration-4 {
+    bottom: 20%;
+    right: 12%;
+    width: 60px;
+    height: 30px;
+    background: #8bc9f6;
+    border: 3px solid #333;
+    border-radius: 30px;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(15deg); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(45deg); }
+    to { transform: rotate(405deg); }
+}
+
+/* Main Content Container */
+#main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    border: 5px solid var(--primary-blue);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    backdrop-filter: blur(10px);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Header & Navigation */
+header {
+    margin-bottom: 30px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    text-shadow: 3px 3px 0 var(--primary-yellow);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.logo-text:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Hand-drawn Tab Navigation */
+.nav-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 10px;
+    background: var(--light-color);
+    padding: 10px;
+    border-radius: 25px;
+    border: 3px solid var(--primary-blue);
+    box-shadow: 5px 5px 0 var(--primary-yellow);
+    position: relative;
+}
+
+.nav-tab {
+    position: relative;
+    padding: 10px 20px;
+    background: var(--light-color);
+    border: 2px solid var(--primary-blue);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: var(--dark-color);
+    transform: rotate(-1deg);
+}
+
+.nav-tab:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.nav-tab:hover {
+    transform: rotate(0deg) translateY(-3px);
+    background: var(--accent-yellow-light);
+    box-shadow: 0 5px 0 var(--primary-blue);
+}
+
+.nav-tab.active {
+    background: var(--primary-blue);
+    color: var(--light-color);
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 3px 0 var(--secondary-blue);
+}
+
+/* Language Switcher */
+.language-switch {
+    display: flex;
+    gap: 5px;
+}
+
+.lang-btn {
+    background-color: var(--light-color);
+    border: 2px solid var(--primary-blue);
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: rotate(-2deg);
+}
+
+.lang-btn:hover {
+    transform: rotate(0deg) scale(1.05);
+    background-color: var(--accent-yellow-light);
+}
+
+.lang-btn.active {
+    background-color: var(--primary-blue);
+    color: var(--light-color);
+    transform: rotate(0deg);
+}
+
+/* Sections */
+.section {
+    padding: 30px 0;
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-blue);
+    text-shadow: 3px 3px 0 var(--primary-yellow);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: var(--primary-yellow);
+    border-radius: 5px;
+    box-shadow: 0 2px 0 var(--primary-blue);
+}
+
+/* Hero Section */
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    min-height: 300px;
+}
+
+.comic-bubble {
+    position: relative;
+    background-color: var(--light-color);
+    border: 3px solid var(--dark-color);
+    border-radius: 30px;
+    padding: 40px 50px;
+    box-shadow: 8px 8px 0 var(--primary-yellow);
+    transform: rotate(-1deg);
+    z-index: 2;
+    max-width: 600px;
+    text-align: center;
+}
+
+.comic-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--light-color);
+    border-right: 3px solid var(--dark-color);
+    border-bottom: 3px solid var(--dark-color);
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.comic-bubble h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.skill-bubble {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: var(--light-color);
+    border: 2px solid var(--dark-color);
+    border-radius: 50px;
+    padding: 8px 15px;
+    font-weight: bold;
+    box-shadow: 3px 3px 0 var(--primary-yellow);
+    transform: rotate(-2deg);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-bubble:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.skill-bubble:hover {
+    transform: rotate(0deg) scale(1.1);
+    animation: wiggle 0.5s ease;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg) scale(1.1); }
+    25% { transform: rotate(2deg) scale(1.1); }
+    75% { transform: rotate(-2deg) scale(1.1); }
+}
+
+/* Improved Interactive Cat Design - Blue-White British Shorthair */
+.cat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    right: 20px;
+    top: 80px; /* 往下移动到卡片中间位置 */
+    z-index: 1;
+}
+
+.cat {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.cat-head {
+    position: relative;
+    width: 90px;
+    height: 85px;
+    background: linear-gradient(145deg, #ffffff, #f8f9ff);
+    border-radius: 50px;
+    border: 3px solid var(--dark-color);
+    margin-bottom: -8px;
+    z-index: 2;
+    box-shadow: inset 0 0 0 2px rgba(168, 216, 234, 0.3);
+}
+
+.cat-ear {
+    position: absolute;
+    width: 22px;
+    height: 25px;
+    background: linear-gradient(145deg, #A8D8EA, #87CEEB);
+    border: 3px solid var(--dark-color);
+    border-radius: 15px 15px 0 0;
+    top: -15px;
+}
+
+.cat-ear::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 12px;
+    background: #ffb3d1;
+    border-radius: 8px 8px 0 0;
+}
+
+.cat-ear-left {
+    left: 20px;
+    transform: rotate(-15deg);
+}
+
+.cat-ear-right {
+    right: 20px;
+    transform: rotate(15deg);
+}
+
+.cat-eye {
+    position: absolute;
+    width: 20px;
+    height: 24px;
+    background: #A8D8EA;
+    border: 2px solid var(--dark-color);
+    border-radius: 50%;
+    top: 20px;
+    overflow: hidden;
+}
+
+.cat-eye::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 4px; /* 增加底部间距,避免和鼻子重叠 */
+    background: radial-gradient(circle at 30% 30%, #ffffff 20%, #A8D8EA 40%, #4a90e2 100%);
+    border-radius: 50% 50% 45% 45%; /* 调整底部圆角,使眼睛形状更自然 */
+}
+
+.cat-eye-left {
+    left: 18px;
+}
+
+.cat-eye-right {
+    right: 18px;
+}
+
+.cat-pupil {
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    background: var(--dark-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    z-index: 2;
+}
+
+.cat-pupil::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+}
+
+.cat-nose {
+    position: absolute !important;
+    width: 8px !important; /* 增大鼻子 */
+    height: 7px !important; /* 增大鼻子 */
+    background: #ff69b4 !important;
+    border: 1px solid var(--dark-color) !important;
+    border-radius: 50% !important;
+    top: 46px !important; /* 调整到眼睛(16px+32px=48px)和嘴巴(58px)中间 */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+.cat-mouth {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 8px;
+    border: 2px solid var(--dark-color);
+    border-top: none;
+    border-radius: 0 0 50% 50%;
+    background: transparent;
+}
+
+.cat-mouth::before,
+.cat-mouth::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid var(--dark-color);
+    border-bottom: none;
+    border-radius: 50% 50% 0 0;
+}
+
+.cat-mouth::before {
+    left: -1px;
+    border-right: none;
+}
+
+.cat-mouth::after {
+    right: -1px;
+    border-left: none;
+}
+
+.cat-tongue {
+    position: absolute;
+    width: 4px;
+    height: 3px;
+    background: #ff6b7a;
+    border-radius: 50%;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cat-whiskers {
+    position: absolute;
+    top: 35px;
+    width: 18px;
+    height: 1px;
+    background: var(--dark-color);
+    border-radius: 2px;
+}
+
+.cat-whiskers::before,
+.cat-whiskers::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 1px;
+    background: var(--dark-color);
+    border-radius: 2px;
+}
+
+.cat-whiskers-left {
+    left: -10px;
+    transform: rotate(-8deg);
+}
+
+.cat-whiskers-left::before {
+    top: -3px;
+    transform: rotate(-4deg);
+}
+
+.cat-whiskers-left::after {
+    top: 3px;
+    transform: rotate(4deg);
+}
+
+.cat-whiskers-right {
+    right: -10px;
+    transform: rotate(8deg);
+}
+
+.cat-whiskers-right::before {
+    top: -3px;
+    transform: rotate(4deg);
+}
+
+.cat-whiskers-right::after {
+    top: 3px;
+    transform: rotate(-4deg);
+}
+
+.cat-body {
+    position: relative;
+    width: 75px;
+    height: 90px;
+    background: linear-gradient(145deg, #ffffff, #f8f9ff);
+    border: 3px solid var(--dark-color);
+    border-radius: 45px 45px 30px 30px;
+    z-index: 1;
+    box-shadow: inset 0 0 0 2px rgba(168, 216, 234, 0.2);
+}
+
+.cat-body::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 30px;
+    background: linear-gradient(145deg, #A8D8EA, #87CEEB);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.cat-paw {
+    position: absolute;
+    width: 14px;
+    height: 18px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border: 2px solid var(--dark-color);
+    border-radius: 50%;
+    bottom: -10px;
+}
+
+.cat-paw-left {
+    left: 15px;
+}
+
+.cat-paw-right {
+    right: 15px;
+}
+
+.cat-tail {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(145deg, #A8D8EA, #87CEEB);
+    border: 2px solid var(--dark-color);
+    border-radius: 50% 80% 50% 80%;
+    right: -25px;
+    top: 40px;
+    transform: rotate(25deg);
+    animation: tailWag 4s ease-in-out infinite;
+}
+
+.cat-tail::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(145deg, #ffffff, #f8f9ff);
+    border: 2px solid var(--dark-color);
+    border-radius: 50%;
+}
+
+@keyframes tailWag {
+    0%, 100% { transform: rotate(25deg); }
+    50% { transform: rotate(5deg); }
+}
+
+/* Enhanced Cat Sound Bubbles */
+.cat-sound {
+    position: absolute;
+    top: -70px;
+    right: -30px;
+    background: linear-gradient(145deg, var(--light-color), #fff8e1);
+    border: 3px solid var(--dark-color);
+    border-radius: 20px 20px 20px 5px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 3px 3px 0 var(--primary-yellow);
+    min-width: 70px;
+    text-align: center;
+    z-index: 3;
+    font-weight: bold;
+}
+
+.cat-sound::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 15px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(145deg, var(--light-color), #fff8e1);
+    border-right: 3px solid var(--dark-color);
+    border-bottom: 3px solid var(--dark-color);
+    transform: rotate(45deg);
+}
+
+.cat-sound.show {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+/* Cat Expression States */
+.cat.sleeping .cat-eye {
+    height: 2px !important;
+    width: 22px !important;
+    border-radius: 1px !important;
+    background: var(--dark-color) !important;
+    transform: rotate(0deg) !important; /* 改成水平线，不旋转 */
+    top: 24px !important; /* 调整位置让两条线看起来像闭眼 */
+}
+
+.cat.sleeping .cat-pupil {
+    display: none;
+}
+
+.cat.happy .cat-eye {
+    border-radius: 50% 50% 0 0 !important;
+    height: 20px !important; /* 增加高度让眼睛更大 */
+    top: 24px !important; /* 稍微下移一点 */
+}
+
+.cat.angry .cat-eye {
+    transform: scaleY(0.4) rotate(-10deg);
+}
+
+.cat.angry .cat-eye-right {
+    transform: scaleY(0.4) rotate(10deg);
+}
+
+.cat.surprised .cat-eye {
+    width: 24px;
+    height: 28px;
+}
+
+.cat.love .cat-eye {
+    background: #ff69b4;
+}
+
+.cat.love .cat-eye::before {
+    background: radial-gradient(circle at 30% 30%, #ffffff 20%, #ff69b4 40%, #e91e63 100%);
+}
+
+.cat.dizzy .cat-pupil {
+    animation: dizzyEyes 2s infinite;
+}
+
+@keyframes dizzyEyes {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    25% { transform: translate(-30%, -30%) rotate(90deg); }
+    50% { transform: translate(-70%, -50%) rotate(180deg); }
+    75% { transform: translate(-50%, -70%) rotate(270deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Cat Animations */
+.cat.nuzzle {
+    animation: nuzzle 1s ease;
+}
+
+@keyframes nuzzle {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+.cat.scratching {
+    animation: scratch 1s ease;
+}
+
+@keyframes scratch {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-3px) rotate(-1deg); }
+    50% { transform: translateY(0) rotate(1deg); }
+    75% { transform: translateY(-2px) rotate(-0.5deg); }
+}
+
+.cat.angry-shake {
+    animation: angryShake 3s ease;
+}
+
+@keyframes angryShake {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    10%, 30%, 50%, 70%, 90% { transform: scale(1.05) rotate(-1deg); }
+    20%, 40%, 60%, 80% { transform: scale(1.05) rotate(1deg); }
+}
+
+.cat.lick .cat-tongue {
+    opacity: 1;
+    animation: lick 0.5s ease;
+}
+
+@keyframes lick {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-2px); }
+}
+
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.education-box,
+.skills-box {
+    background-color: var(--light-color) !important;
+    border: 3px solid var(--dark-color) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 25px !important;
+    box-shadow: 6px 6px 0 var(--primary-yellow) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: visible !important;
+}
+
+.education-box {
+    transform: rotate(-1deg) !important;
+}
+
+.skills-box {
+    transform: rotate(1deg) !important;
+}
+
+.education-box:hover,
+.skills-box:hover {
+    transform: rotate(0deg) translateY(-3px) !important;
+    box-shadow: 8px 8px 0 var(--primary-yellow) !important;
+}
+
+.education-item {
+    margin-bottom: 20px !important;
+    padding-bottom: 15px !important;
+    border-bottom: 2px dashed var(--primary-blue) !important;
+}
+
+.education-item:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.year {
+    font-weight: bold !important;
+    color: var(--primary-blue) !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 8px !important;
+    font-family: var(--font-heading) !important;
+}
+
+.degree {
+    color: var(--dark-color) !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 15px !important;
+}
+
+.publications-note {
+    margin-top: 20px !important;
+    padding: 15px !important;
+    background: rgba(79, 151, 210, 0.1) !important;
+    border: 2px dashed var(--primary-blue) !important;
+    border-radius: 8px !important;
+    position: relative !important;
+}
+
+.publications-note::before {
+    content: '🏆' !important;
+    margin-right: 8px !important;
+    font-size: 1.1rem !important;
+}
+
+.skills-box ul {
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.skills-box li {
+    position: relative !important;
+    padding-left: 25px !important;
+    margin-bottom: 15px !important;
+    color: var(--dark-color) !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+}
+
+.skills-box li::before {
+    content: '●' !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: var(--primary-yellow) !important;
+    font-size: 1.2rem !important;
+    top: 0 !important;
+}
+
+/* Projects Section */
+.project-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-tabs {
+    display: flex;
+    gap: 10px;
+    background: var(--light-color);
+    padding: 10px;
+    border-radius: 25px;
+    border: 3px solid var(--primary-blue);
+    box-shadow: 5px 5px 0 var(--primary-yellow);
+    position: relative;
+}
+
+.project-tab {
+    position: relative;
+    padding: 10px 20px;
+    background: var(--light-color);
+    border: 2px solid var(--primary-blue);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: var(--dark-color);
+    transform: rotate(-1deg);
+}
+
+.project-tab:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.project-tab:hover {
+    transform: rotate(0deg) scale(1.05);
+    background: var(--accent-yellow-light);
+}
+
+.project-tab.active {
+    background: var(--primary-blue);
+    color: var(--light-color);
+    transform: rotate(0deg);
+}
+
+.project-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-content {
+    display: none;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    border: 5px solid var(--primary-blue);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.project-content.active {
+    display: block;
+    animation: fadeInUp 0.6s ease;
+}
+
+.project-card {
+    background-color: var(--light-color);
+    border: 3px solid var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: 8px 8px 0 var(--primary-yellow);
+    transition: all 0.3s ease;
+    position: relative;
+    transform: rotate(-1deg);
+}
+
+.project-card:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.project-card:hover {
+    transform: rotate(0deg) translateY(-5px);
+    box-shadow: 10px 10px 0 var(--primary-yellow);
+}
+
+.project-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.project-date {
+    font-size: 0.9rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.project-description ul {
+    list-style-type: none;
+}
+
+.project-description li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.project-description li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-yellow);
+    font-weight: bold;
+}
+
+.project-card.featured {
+    background-color: var(--accent-yellow-light);
+    border: 3px solid var(--primary-yellow);
+    box-shadow: 0 0 0 5px var(--primary-yellow);
+}
+
+/* Publications Section */
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.publication-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    align-items: center;
+    background-color: var(--light-color);
+    border: 3px solid var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: 6px 6px 0 var(--primary-yellow);
+    transition: all 0.3s ease;
+    transform: rotate(-0.5deg);
+}
+
+.publication-item:nth-child(even) {
+    transform: rotate(0.5deg);
+}
+
+.publication-item:hover {
+    transform: rotate(0deg) translateX(5px);
+    box-shadow: 8px 8px 0 var(--primary-yellow);
+}
+
+.publication-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-color);
+    font-weight: bold;
+    border: 3px solid var(--dark-color);
+}
+
+.publication-content {
+    flex: 1;
+}
+
+.publication-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.journal-tag {
+    background-color: var(--primary-yellow);
+    color: var(--dark-color);
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 2px solid var(--dark-color);
+}
+
+/* SEO Works Section */
+.seo-categories {
+    margin-bottom: 30px;
+}
+
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.category-tab {
+    padding: 10px 20px;
+    background: var(--light-color);
+    border: 2px solid var(--primary-blue);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    transform: rotate(-1deg);
+}
+
+.category-tab:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.category-tab:hover {
+    transform: rotate(0deg) scale(1.05);
+    background: var(--accent-yellow-light);
+}
+
+.category-tab.active {
+    background: var(--primary-blue);
+    color: var(--light-color);
+    transform: rotate(0deg);
+}
+
+.seo-works-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+    align-items: stretch !important;
+}
+
+.seo-work-card {
+    background: var(--light-color) !important;
+    border: 3px solid var(--dark-color) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 20px !important;
+    box-shadow: 6px 6px 0 var(--primary-yellow) !important;
+    transition: all 0.3s ease !important;
+    transform: rotate(-1deg) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 180px !important;
+}
+
+.seo-work-card:nth-child(even) {
+    transform: rotate(1deg) !important;
+}
+
+.seo-work-card:hover {
+    transform: rotate(0deg) translateY(-5px) !important;
+    box-shadow: 8px 8px 0 var(--primary-yellow) !important;
+}
+
+.work-preview {
+    text-align: center !important;
+    margin-bottom: 12px !important;
+    flex-shrink: 0 !important;
+}
+
+.work-icon {
+    font-size: 2.5rem !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+}
+
+.work-info {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
+.work-info h4 {
+    color: var(--primary-blue) !important;
+    font-family: var(--font-heading) !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+}
+
+.work-description {
+    font-size: 0.85rem !important;
+    color: var(--dark-color) !important;
+    line-height: 1.4 !important;
+    margin: 0 0 12px 0 !important;
+    text-align: center !important;
+    opacity: 0.8 !important;
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.work-link {
+    display: inline-block !important;
+    background: var(--primary-blue) !important;
+    color: var(--light-color) !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    text-decoration: none !important;
+    border: 2px solid var(--dark-color) !important;
+    box-shadow: 3px 3px 0 var(--primary-yellow) !important;
+    transition: all 0.3s ease !important;
+    font-weight: bold !important;
+    font-size: 0.8rem !important;
+    text-align: center !important;
+    align-self: center !important;
+    margin-top: auto !important;
+}
+
+.work-link:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 4px 4px 0 var(--primary-yellow) !important;
+    background: var(--secondary-blue) !important;
+}
+
+/* Media Section */
+.media-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.media-experience {
+    background-color: var(--light-color);
+    border: 3px solid var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: 6px 6px 0 var(--primary-yellow);
+    transform: rotate(-0.5deg);
+}
+
+.media-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.achievement-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.achievement-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-yellow);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: 3px solid var(--dark-color);
+    color: var(--dark-color);
+}
+
+/* Contact Section */
+.contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.contact-form {
+    background-color: var(--light-color);
+    border: 3px solid var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: 6px 6px 0 var(--primary-yellow);
+    transform: rotate(-1deg);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+.comic-input {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid var(--primary-blue);
+    border-radius: var(--border-radius);
+    background-color: var(--light-color);
+    font-family: var(--font-main);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.comic-input:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 0 3px rgba(255, 220, 94, 0.3);
+    transform: scale(1.02);
+}
+
+textarea.comic-input {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.comic-button {
+    background-color: var(--primary-blue);
+    color: var(--light-color);
+    border: 3px solid var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--primary-yellow);
+    transition: all 0.3s ease;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transform: rotate(-1deg);
+}
+
+.comic-button:hover {
+    transform: rotate(0deg) translateY(-2px);
+    box-shadow: 6px 6px 0 var(--primary-yellow);
+}
+
+.comic-button:active {
+    transform: rotate(0deg) translateY(2px);
+    box-shadow: 2px 2px 0 var(--primary-yellow);
+}
+
+.comic-button.small {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--light-color);
+    border: 3px solid var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    transition: all 0.3s ease;
+    color: var(--dark-color);
+    text-decoration: none;
+    transform: rotate(-1deg);
+}
+
+.social-link:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.social-link:hover {
+    transform: rotate(0deg) translateX(5px);
+    background-color: var(--accent-yellow-light);
+    box-shadow: 4px 4px 0 var(--primary-yellow);
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: 3px solid var(--dark-color);
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 3px dashed var(--primary-blue);
+    text-align: center;
+}
+
+/* Toast Notification */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary-blue);
+    color: var(--light-color);
+    border: 3px solid var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 15px 20px;
+    box-shadow: 5px 5px 0 var(--primary-yellow);
+    transform: translateX(150%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    font-weight: bold;
+}
+
+.toast-notification.show {
+    transform: translateX(0);
+}
+
+/* Language Specific Styles */
+html[lang="zh-CN"] .en {
+    display: none;
+}
+
+html[lang="en"] .zh {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-container,
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid,
+    .seo-works-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-tabs {
+        justify-content: center;
+    }
+    
+    .cat {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .publication-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .achievement-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .handwriting-svg {
+        width: 300px;
+        height: 150px;
+    }
+}
+/* 🐱 猫猫设计优化 + 🎨 手绘涂鸦风格卡片装饰 */
+.cat-ear-left {
+    left: 12px !important; /* 耳朵分得更开 */
+}
+
+.cat-ear-right {
+    right: 12px !important; /* 耳朵分得更开 */
+}
+
+.cat-eye {
+    width: 28px !important; /* 增大眼睛 */
+    height: 32px !important; /* 增大眼睛 */
+    top: 16px !important;
+}
+
+.cat-eye-left {
+    left: 12px !important; /* 重新调整位置 */
+}
+
+.cat-eye-right {
+    right: 12px !important; /* 重新调整位置 */
+}
+
+.cat-pupil {
+    width: 14px !important; /* 增大瞳孔 */
+    height: 18px !important; /* 增大瞳孔 */
+}
+
+.cat-pupil::after {
+    top: 3px !important;
+    left: 3px !important;
+    width: 5px !important; /* 增大高光 */
+    height: 5px !important; /* 增大高光 */
+}
+
+/* 调整鼻子 - 变大并下移 */
+.cat-nose {
+    position: absolute !important;
+    width: 8px !important; /* 增大鼻子 */
+    height: 7px !important; /* 增大鼻子 */
+    background: #ff69b4 !important;
+    border: 1px solid var(--dark-color) !important;
+    border-radius: 50% !important;
+    top: 46px !important; /* 调整到眼睛(16px+32px=48px)和嘴巴(58px)中间 */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* 改变嘴巴样式 - ^ 形状，变大并下移 */
+.cat-mouth {
+    top: 58px !important; /* 下移嘴巴 */
+    width: 1px !important;
+    height: 1px !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.cat-mouth::before,
+.cat-mouth::after {
+    top: 0 !important;
+    width: 8px !important; /* 增大嘴巴 */
+    height: 2px !important; /* 增大嘴巴 */
+    background: var(--dark-color) !important;
+    border-radius: 1px !important;
+    border: none !important;
+}
+
+.cat-mouth::before {
+    left: -4px !important;
+    transform: rotate(25deg) !important;
+    transform-origin: right center !important;
+}
+
+.cat-mouth::after {
+    right: -4px !important;
+    transform: rotate(-25deg) !important;
+    transform-origin: left center !important;
+}
+
+.cat-whiskers {
+    top: 44px !important; /* 调整胡须位置 */
+}
+
+/* 缩小身体并居中头部 */
+.cat-body {
+    width: 55px !important; /* 进一步缩小身体 */
+    height: 65px !important; /* 进一步缩小身体 */
+    border-radius: 35px 35px 20px 20px !important;
+    margin-left: 17.5px !important; /* 调整身体位置让头居中 */
+}
+
+.cat-body::before {
+    top: 10px !important;
+    width: 18px !important;
+    height: 22px !important;
+}
+
+/* 调整前爪位置 - 往上移 */
+.cat-front-paws {
+    position: absolute;
+    top: 35px !important; /* 往上移前爪 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 20px;
+    z-index: 2;
+}
+
+.cat-front-paw {
+    position: absolute;
+    width: 10px;
+    height: 16px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border: 2px solid var(--dark-color);
+    border-radius: 50% 50% 60% 60%;
+    top: 0;
+}
+
+.cat-front-paw-left {
+    left: 6px;
+    transform: rotate(-5deg);
+}
+
+.cat-front-paw-right {
+    right: 6px;
+    transform: rotate(5deg);
+}
+
+.cat-paw {
+    width: 12px !important;
+    height: 16px !important;
+    bottom: -8px !important;
+}
+
+.cat-paw-left {
+    left: 10px !important; /* 调整后爪位置适配新身体 */
+}
+
+.cat-paw-right {
+    right: 10px !important; /* 调整后爪位置适配新身体 */
+}
+
+/* 重新设计尾巴 - 蛇形蓝白条纹，连接在身体上 */
+.cat-tail {
+    right: -8px !important; /* 连接到身体右侧 */
+    top: 25px !important; /* 连接到身体中部 */
+    width: 40px !important;
+    height: 8px !important;
+    background: repeating-linear-gradient(
+        90deg,
+        #A8D8EA 0px,
+        #A8D8EA 8px,
+        #ffffff 8px,
+        #ffffff 16px
+    ) !important;
+    border: 2px solid var(--dark-color) !important;
+    border-radius: 20px !important;
+    transform: rotate(25deg) !important;
+    z-index: 0 !important;
+}
+
+.cat-tail::before {
+    content: '' !important;
+    position: absolute !important;
+    right: -12px !important;
+    top: -2px !important;
+    width: 25px !important;
+    height: 6px !important;
+    background: repeating-linear-gradient(
+        90deg,
+        #87CEEB 0px,
+        #87CEEB 6px,
+        #f8f9ff 6px,
+        #f8f9ff 12px
+    ) !important;
+    border: 2px solid var(--dark-color) !important;
+    border-radius: 15px !important;
+    transform: rotate(15deg) !important;
+}
+
+.cat-tail::after {
+    content: '' !important;
+    position: absolute !important;
+    right: -28px !important;
+    top: -1px !important;
+    width: 15px !important;
+    height: 4px !important;
+    background: repeating-linear-gradient(
+        90deg,
+        #A8D8EA 0px,
+        #A8D8EA 4px,
+        #ffffff 4px,
+        #ffffff 8px
+    ) !important;
+    border: 2px solid var(--dark-color) !important;
+    border-radius: 10px !important;
+    transform: rotate(25deg) !important;
+}
+
+ 
+
+/* 技能列表装饰增强 */
+.skills-box li {
+    position: relative !important;
+    margin-bottom: 18px !important;
+    padding: 8px 0 8px 30px !important;
+    border-radius: 15px !important;
+    background: rgba(255, 220, 94, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.skills-box li:nth-child(odd) {
+    transform: rotate(-0.5deg) !important;
+}
+
+.skills-box li:nth-child(even) {
+    transform: rotate(0.5deg) !important;
+}
+
+.skills-box li:hover {
+    transform: rotate(0deg) scale(1.02) !important;
+    background: rgba(255, 220, 94, 0.2) !important;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+.skills-box li::before {
+    content: '⭐' !important;
+    position: absolute !important;
+    left: 8px !important;
+    top: 8px !important;
+    font-size: 1rem !important;
+    animation: twinkle 2s ease-in-out infinite alternate !important;
+}
+
+.skills-box li:nth-child(2)::before {
+    content: '💼' !important;
+}
+
+.skills-box li:nth-child(3)::before {
+    content: '🔧' !important;
+}
+
+.skills-box li:nth-child(4)::before {
+    content: '🎨' !important;
+}
+
+ 
+
+.publications-note::before {
+    content: '🏆' !important;
+    margin-right: 8px !important;
+    font-size: 1.2rem !important;
+}
+
+.publications-note::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -5px !important;
+    right: -5px !important;
+    width: 25px !important;
+    height: 25px !important;
+    border: 2px solid var(--primary-blue) !important;
+    border-radius: 50% !important;
+    background: var(--light-color) !important;
+    box-shadow: 0 0 0 2px var(--primary-yellow) !important;
+}
+
+ 
+
+/* 闪烁动画 */
+@keyframes twinkle {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: scale(1.2) rotate(5deg); opacity: 0.8; }
+}
+
+/* 涂鸦式阴影增强 */
+.education-box {
+    box-shadow: 
+        6px 6px 0 var(--primary-yellow),
+        12px 12px 0 rgba(255, 220, 94, 0.3),
+        3px 3px 0 var(--primary-blue) !important;
+}
+
+.skills-box {
+    box-shadow: 
+        6px 6px 0 var(--primary-yellow),
+        12px 12px 0 rgba(255, 220, 94, 0.3),
+        3px 3px 0 var(--memphis-green) !important;
+}
+
+/* 🎨 优化SEO作品卡片排版 */
+.seo-work-card {
+    background: var(--light-color) !important;
+    border: 3px solid var(--dark-color) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 20px !important;
+    box-shadow: 6px 6px 0 var(--primary-yellow) !important;
+    transition: all 0.3s ease !important;
+    transform: rotate(-1deg) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 180px !important;
+}
+
+.seo-work-card:nth-child(even) {
+    transform: rotate(1deg) !important;
+}
+
+.seo-work-card:hover {
+    transform: rotate(0deg) translateY(-5px) !important;
+    box-shadow: 8px 8px 0 var(--primary-yellow) !important;
+}
+
+/* 优化emoji图标位置 */
+.work-preview {
+    text-align: center !important;
+    margin-bottom: 12px !important;
+    flex-shrink: 0 !important;
+}
+
+.work-icon {
+    font-size: 2.5rem !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+}
+
+/* 优化标题和内容布局 */
+.work-info {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
+.work-info h4 {
+    color: var(--primary-blue) !important;
+    font-family: var(--font-heading) !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+}
+
+/* 优化描述文字 */
+.work-description {
+    font-size: 0.85rem !important;
+    color: var(--dark-color) !important;
+    line-height: 1.4 !important;
+    margin: 0 0 12px 0 !important;
+    text-align: center !important;
+    opacity: 0.8 !important;
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* 优化按钮样式和位置 */
+.work-link {
+    display: inline-block !important;
+    background: var(--primary-blue) !important;
+    color: var(--light-color) !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    text-decoration: none !important;
+    border: 2px solid var(--dark-color) !important;
+    box-shadow: 3px 3px 0 var(--primary-yellow) !important;
+    transition: all 0.3s ease !important;
+    font-weight: bold !important;
+    font-size: 0.8rem !important;
+    text-align: center !important;
+    align-self: center !important;
+    margin-top: auto !important;
+}
+
+.work-link:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 4px 4px 0 var(--primary-yellow) !important;
+    background: var(--secondary-blue) !important;
+}
+
+/* 确保卡片网格布局更整齐 */
+.seo-works-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+    align-items: stretch !important;
+}
+
+/* 🔧 修复筛选功能 - 确保JavaScript可以覆盖display属性 */
+.seo-work-card[style*="display: none"] {
+    display: none !important;
+}
+
+.seo-work-card[style*="display: block"] {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* 🚀 Memphis风格回到顶部按钮 */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-blue);
+    border: 4px solid var(--dark-color);
+    border-radius: 50%;
+    box-shadow: 6px 6px 0 var(--primary-yellow);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-3deg) scale(0);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.back-to-top-btn.show {
+    transform: rotate(-3deg) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top-btn:hover {
+    transform: rotate(0deg) scale(1.1);
+    box-shadow: 8px 8px 0 var(--primary-yellow);
+    background: var(--secondary-blue);
+}
+
+.back-to-top-btn:active {
+    transform: rotate(0deg) scale(0.95);
+    box-shadow: 4px 4px 0 var(--primary-yellow);
+}
+
+.arrow-up {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--light-color);
+    line-height: 1;
+    transform: translateY(-2px);
+    animation: arrowBounce 2s ease-in-out infinite;
+}
+
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: translateY(-2px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* 点击回弹动画 */
+.back-to-top-btn.clicked {
+    animation: backToTopBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes backToTopBounce {
+    0% {
+        transform: rotate(-3deg) scale(1);
+    }
+    25% {
+        transform: rotate(0deg) scale(1.3);
+    }
+    50% {
+        transform: rotate(2deg) scale(0.9);
+    }
+    75% {
+        transform: rotate(-1deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(-3deg) scale(1);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .arrow-up {
+        font-size: 1.5rem;
+    }
+}
+
+</style>
+
+
+<body>
+    <!-- Ocean Background with Whales -->
+    <div class="ocean-background">
+        <div class="whale whale-1"></div>
+        <div class="whale whale-2"></div>
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+    </div>
+
+    <!-- Splash Screen with Memphis Handwritten Style -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <div class="handwriting-container">
+                <div class="handwriting-name">Bethybabe</div>
+                <div class="typewriter-text">
+                    <span id="typewriter-text"></span>
+                    <span class="typewriter-cursor"></span>
+                </div>
+            </div>
+            <!-- Memphis decorative elements -->
+            <div class="memphis-decoration decoration-1"></div>
+            <div class="memphis-decoration decoration-2"></div>
+            <div class="memphis-decoration decoration-3"></div>
+            <div class="memphis-decoration decoration-4"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+        <!-- Navigation -->
+        <header>
+            <nav class="main-nav">
+                <div class="logo">
+                    <div class="logo-text">HL</div>
+                </div>
+                <div class="nav-container">
+                    <div class="nav-tabs">
+                        <div class="nav-tab active" data-section="home">
+                            <span class="zh">首页</span>
+                            <span class="en">Home</span>
+                        </div>
+                        <div class="nav-tab" data-section="about">
+                            <span class="zh">关于</span>
+                            <span class="en">About</span>
+                        </div>
+                        <div class="nav-tab" data-section="projects">
+                            <span class="zh">项目</span>
+                            <span class="en">Projects</span>
+                        </div>
+                        <div class="nav-tab" data-section="publications">
+                            <span class="zh">发表</span>
+                            <span class="en">Publications</span>
+                        </div>
+                        <div class="nav-tab" data-section="seo">
+                            <span class="zh">SEO作品</span>
+                            <span class="en">SEO Works</span>
+                        </div>
+                        <div class="nav-tab" data-section="media">
+                            <span class="zh">自媒体</span>
+                            <span class="en">Media</span>
+                        </div>
+                        <div class="nav-tab" data-section="contact">
+                            <span class="zh">联系</span>
+                            <span class="en">Contact</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="language-switch">
+                    <button id="lang-zh" class="lang-btn active">中文</button>
+                    <button id="lang-en" class="lang-btn">EN</button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Sections -->
+        <main>
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <div class="hero-container">
+                        <div class="comic-bubble main-intro">
+                            <h1>
+                                <span class="zh">你好！我是黄澜</span>
+                                <span class="en">Hi! I'm Huang Lan</span>
+                            </h1>
+                            <p class="tagline">
+                                <span class="zh">SEO专家 | 内容创作者 | AI研究者</span>
+                                <span class="en">SEO Expert | Content Creator | AI Researcher</span>
+                            </p>
+                            <div class="skills-container">
+                                <div class="skill-bubble">
+                                    <span class="zh">英语六级652分</span>
+                                    <span class="en">CET-6 652 points</span>
+                                </div>
+                                <div class="skill-bubble">
+                                    <span class="zh">雅思8分</span>
+                                    <span class="en">IELTS 8.0</span>
+                                </div>
+                                <div class="skill-bubble">
+                                    <span class="zh">SCI论文发表</span>
+                                    <span class="en">SCI Publications</span>
+                                </div>
+                                <div class="skill-bubble">
+                                    <span class="zh">2万+粉丝</span>
+                                    <span class="en">20K+ Followers</span>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <!-- Interactive Cat in Corner -->
+                        <div class="cat-container">
+                            <div class="cat" id="interactive-cat">
+                                <div class="cat-head">
+                                    <div class="cat-ear cat-ear-left"></div>
+                                    <div class="cat-ear cat-ear-right"></div>
+                                    <div class="cat-face">
+                                        <div class="cat-eye cat-eye-left">
+                                            <div class="cat-pupil"></div>
+                                        </div>
+                                        <div class="cat-eye cat-eye-right">
+                                            <div class="cat-pupil"></div>
+                                        </div>
+                                        <div class="cat-nose"></div>
+                                        <div class="cat-mouth">
+                                            <div class="cat-tongue"></div>
+                                        </div>
+                                        <div class="cat-whiskers cat-whiskers-left"></div>
+                                        <div class="cat-whiskers cat-whiskers-right"></div>
+                                    </div>
+                                </div>
+                                <div class="cat-body">
+                                    <div class="cat-paw cat-paw-left"></div>
+                                    <div class="cat-paw cat-paw-right"></div>
+                                </div>
+                                <div class="cat-tail"></div>
+                            </div>
+                        <div class="cat-sound" id="cat-sound">😸 喵~</div>
+                        <div class="cat-name" style="margin-top: 10px; text-align: center; font-size: 0.8rem; color: var(--primary-blue); font-weight: bold;">喵仔</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">
+                    <span class="zh">关于我</span>
+                    <span class="en">About Me</span>
+                </h2>
+                <div class="about-content">
+                    <div class="education-box">
+                        <h3>
+                            <span class="zh">教育背景</span>
+                            <span class="en">Education</span>
+                        </h3>
+                        <div class="education-item">
+                            <div class="year">2019-2023</div>
+                            <div class="degree">
+                                <span class="zh">英语语言文学+经济（辅修）本科</span>
+                                <span class="en">Bachelor's in English Language and Literature + Economics (Minor)</span>
+                            </div>
+                        </div>
+                        <div class="publications-note">
+                            <span class="zh">• 发表SCI一区论文（RELC Journal）</span>
+                            <span class="en">• Published SCI Q1 paper (RELC Journal)</span>
+                            <br>
+                            <span class="zh" style="margin-left: 1em;">• 发表Springer国际会议论文</span>
+                            <span class="en" style="margin-left: 1em;">• Published Springer conference paper</span>
+                        </div>
+                    </div>
+                    <div class="skills-box">
+                        <h3>
+                            <span class="zh">专业技能</span>
+                            <span class="en">Professional Skills</span>
+                        </h3>
+                        <ul>
+                            <li>
+                                <span class="zh">英语能力优秀：大学英语六级652分（前0.2%），英语专八，雅思8分</span>
+                                <span class="en">Excellent English: CET-6 652 (top 0.2%), TEM-8, IELTS 8.0</span>
+                            </li>
+                            <li>
+                                <span class="zh">自媒体0-1起号2万粉，擅长内容创作与社媒运营（孵化过26w+粉达人）</span>
+                                <span class="en">Social media expertise: 20K+ followers, content creation & operations (nurtured 260K+ influencer)</span>
+                            </li>
+                            <li>
+                                <span class="zh">精通Ahrefs、SEMrush、GSC、GA等SEO工具，精通SQL、Excel、Python等数据分析</span>
+                                <span class="en">Proficient in SEO tools (Ahrefs, SEMrush, GSC, GA) & data analysis (SQL, Excel, Python)</span>
+                            </li>
+                            <li>
+                                <span class="zh">熟练使用HTML、CSS，以及Pr、AE、剪映、PS等视频图片处理软件</span>
+                                <span class="en">Skilled with HTML, CSS, and media editing software (Pr, AE, CapCut, PS)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2 class="section-title">
+                    <span class="zh">工作与项目经历</span>
+                    <span class="en">Work & Projects</span>
+                </h2>
+                <div class="project-categories">
+                    <div class="project-tabs">
+                        <div class="project-tab active" data-project="trip">
+                            <span class="zh">Trip.com</span>
+                            <span class="en">Trip.com</span>
+                        </div>
+                        <div class="project-tab" data-project="tapfantasy">
+                            <span class="zh">Tap Fantasy Web3</span>
+                            <span class="en">Tap Fantasy Web3</span>
+                        </div>
+                        <div class="project-tab" data-project="research">
+                            <span class="zh">GenAI跨文化研究所</span>
+                            <span class="en">GenAI Cross-cultural Research</span>
+                        </div>
+                    </div>
+                    <div class="project-content-container">
+                        <div class="project-content active" id="trip-content">
+                            <div class="project-card featured">
+                        <div class="project-title">Trip.com Group</div>
+                        <div class="project-subtitle">
+                            <span class="zh">谷歌SEO海外运营</span>
+                            <span class="en">Google SEO International Operations</span>
+                        </div>
+                        <div class="project-date">2024.01 - 至今</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>
+                                    <span class="zh">负责英文站SEO全流程管理，实现站点总体UV提升420%，日均订单增长近3倍</span>
+                                    <span class="en">Managed full SEO process for English site, achieving 420% UV increase & 3x daily orders</span>
+                                </li>
+                                <li>
+                                    <span class="zh">制定SEO策略，建立10000+关键词库，带领团队产出150+核心页面</span>
+                                    <span class="en">Developed SEO strategy, built 10,000+ keyword database, led team to create 150+ core pages</span>
+                                </li>
+                                <li>
+                                    <span class="zh">主导页面HTML重构、内链优化及转化方案，CVR提升2.78倍</span>
+                                    <span class="en">Led HTML restructuring, internal linking & conversion optimization, increasing CVR by 2.78x</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                        </div>
+                        
+                        <div class="project-content" id="tapfantasy-content">
+                    <div class="project-card">
+                        <div class="project-title">Tap Fantasy Web3</div>
+                        <div class="project-subtitle">
+                            <span class="zh">GameFi团队核心成员</span>
+                            <span class="en">GameFi Team Core Member</span>
+                        </div>
+                        <div class="project-date">2023.10 - 2024.01</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>
+                                    <span class="zh">负责X、Discord、Telegram等平台日常运营，部署40+个TG bot，两周内新增80万游戏用户</span>
+                                    <span class="en">Managed X, Discord & Telegram operations, deployed 40+ TG bots, gained 800K users in 2 weeks</span>
+                                </li>
+                                <li>
+                                    <span class="zh">协助8个KOL项目合作对接，策划执行6场社区活动，推特累计涨粉14万+</span>
+                                    <span class="en">Facilitated 8 KOL collaborations, planned 6 community events, gained 140K+ Twitter followers</span>
+                                </li>
+                                        <li>
+                                            <span class="zh">作为游戏策划&营销，参与MMORPG游戏的立绘制作、本地化以及关卡世界观NFT等策划（看懂Unity，C#和开发提需对接）</span>
+                                            <span class="en">As game planner & marketer, participated in MMORPG artwork creation, localization, and level/worldview NFT planning (Unity, C# development coordination)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                        </div>
+                        
+                        <div class="project-content" id="research-content">
+                    <div class="project-card">
+                        <div class="project-title">
+                                    <span class="zh">GenAI跨文化研究所</span>
+                                    <span class="en">GenAI Cross-cultural Research Institute</span>
+                        </div>
+                        <div class="project-subtitle">
+                            <span class="zh">学术科研项目主导人</span>
+                            <span class="en">Academic Research Project Leader</span>
+                        </div>
+                        <div class="project-date">2023.07 - 2023.10</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>
+                                    <span class="zh">设计并组织76人参与实验，研究AI对大学生口语提高的作用，受试者雅思平均提高0.8分</span>
+                                    <span class="en">Designed & organized experiment with 76 participants, studying AI's effect on oral English, average IELTS improvement of 0.8</span>
+                                </li>
+                                <li>
+                                    <span class="zh">利用SPSS、AMOS分析实验数据，撰写发表论文刊登于SCI一区顶刊（RELC）及Springer</span>
+                                    <span class="en">Analyzed data using SPSS & AMOS, published papers in SCI Q1 journal (RELC) & Springer</span>
+                                </li>
+                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="section">
+                <h2 class="section-title">
+                    <span class="zh">学术发表</span>
+                    <span class="en">Publications</span>
+                </h2>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-icon"><span class="journal-tag">SCI Q1</span></div>
+                        <div class="publication-content">
+                            <h3 class="publication-title">AI for Language Learning (RELC Journal)</h3>
+                            <p class="publication-authors">Huang Lan, et al.</p>
+                            <p class="publication-abstract">
+                                <span class="zh">研究AI对大学生英语口语学习的影响和效果...</span>
+                                <span class="en">Research on the impact and effectiveness of AI on college students' English speaking...</span>
+                            </p>
+                        </div>
+                        <div class="publication-actions">
+                                <a href="https://journals.sagepub.com/doi/abs/10.1177/00336882251341072" target="_blank" class="comic-button small">
+                                    <span class="zh">查看论文</span>
+                                    <span class="en">View Paper</span>
+                                </a>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-icon"><span class="journal-tag">Springer</span></div>
+                        <div class="publication-content">
+                            <h3 class="publication-title">AI Applications in Language Education</h3>
+                            <p class="publication-authors">Huang Lan, et al.</p>
+                            <p class="publication-abstract">
+                                <span class="zh">探讨人工智能在语言教育中的应用和前景...</span>
+                                <span class="en">Exploring applications and prospects of AI in language education...</span>
+                            </p>
+                        </div>
+                        <div class="publication-actions">
+                                <a href="https://link.springer.com/chapter/10.1007/978-981-97-4246-2_6" target="_blank" class="comic-button small">
+                                    <span class="zh">查看论文</span>
+                                    <span class="en">View Paper</span>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEO Works Section -->
+            <section id="seo" class="section">
+                <h2 class="section-title">
+                    <span class="zh">SEO作品展示</span>
+                    <span class="en">SEO Portfolio</span>
+                </h2>
+                <div class="seo-categories">
+                    <div class="category-tabs">
+                        <div class="category-tab active" data-category="all">
+                            <span class="zh">全部</span>
+                            <span class="en">All</span>
+                        </div>
+                        <div class="category-tab" data-category="flight">
+                            <span class="zh">航班</span>
+                            <span class="en">Flights</span>
+                        </div>
+                        <div class="category-tab" data-category="attraction">
+                            <span class="zh">景点</span>
+                            <span class="en">Attractions</span>
+                        </div>
+                        <div class="category-tab" data-category="transport">
+                            <span class="zh">交通</span>
+                            <span class="en">Transport</span>
+                        </div>
+                        <div class="category-tab" data-category="esim">
+                            <span class="zh">eSIM&应用</span>
+                            <span class="en">eSIM&Apps</span>
+                        </div>
+                        <div class="category-tab" data-category="info">
+                            <span class="zh">信息指南</span>
+                            <span class="en">Info Guide</span>
+                        </div>
+                    </div>
+                    <div class="seo-works-grid">
+                        <!-- Flight Category -->
+                        <div class="seo-work-card" data-category="flight">
+                            <div class="work-preview">
+                                <div class="work-icon">✈️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Economy vs Premium Economy</h4>
+                                <p class="work-description">
+                                    <span class="zh">经济舱与超经舱对比指南</span>
+                                    <span class="en">Comprehensive flight comparison</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/airline-deals/economy-vs-premium-economy.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="seo-work-card" data-category="flight">
+                            <div class="work-preview">
+                                <div class="work-icon">🕐</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Last Minute Flights</h4>
+                                <p class="work-description">
+                                    <span class="zh">最后一刻航班预订指南</span>
+                                    <span class="en">Last-minute flight strategies</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/airline-deals/last-minute-flights.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="flight">
+                            <div class="work-preview">
+                                <div class="work-icon">⏰</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Flight Delay Compensation</h4>
+                                <p class="work-description">
+                                    <span class="zh">航班延误赔偿指南</span>
+                                    <span class="en">Flight delay compensation guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/airline-deals/flight-delay-compensation.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="flight">
+                            <div class="work-preview">
+                                <div class="work-icon">🚌</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Beijing Airport to City</h4>
+                                <p class="work-description">
+                                    <span class="zh">北京机场到市区交通指南</span>
+                                    <span class="en">Beijing airport transfer guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/beijing-airport-to-city.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="flight">
+                            <div class="work-preview">
+                                <div class="work-icon">🚇</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Shanghai Airport Transfer</h4>
+                                <p class="work-description">
+                                    <span class="zh">上海机场交通完整指南</span>
+                                    <span class="en">Shanghai airport transfer guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/shanghai-airport-transfer.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="flight">
+                            <div class="work-preview">
+                                <div class="work-icon">✈️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip.com Airport Transfer</h4>
+                                <p class="work-description">
+                                    <span class="zh">Trip.com机场接送服务</span>
+                                    <span class="en">Trip.com airport transfer service</span>
+                                </p>
+                                <a href="https://www.trip.com/ask/questions/trip.com-airport-transfer.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="flight">
+                            <div class="work-preview">
+                                <div class="work-icon">🏆</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip.com Air Miles</h4>
+                                <p class="work-description">
+                                    <span class="zh">Trip.com航空里程指南</span>
+                                    <span class="en">Trip.com air miles guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/airline-deals/trip.com-air-miles.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="flight">
+                            <div class="work-preview">
+                                <div class="work-icon">🌟</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip.com VIP Lounge Access</h4>
+                                <p class="work-description">
+                                    <span class="zh">Trip.com贵宾室权限指南</span>
+                                    <span class="en">Trip.com VIP lounge access</span>
+                                </p>
+                                <a href="https://www.trip.com/ask/questions/trip.com-vip-lounge-access.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Attraction Category -->
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🏰</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Shanghai Disneyland Tickets</h4>
+                                <p class="work-description">
+                                    <span class="zh">上海迪士尼门票购买指南</span>
+                                    <span class="en">Complete Disney ticket guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/shanghai-disneyland-tickets.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🏛️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Forbidden City Tickets</h4>
+                                <p class="work-description">
+                                    <span class="zh">故宫门票预订完整指南</span>
+                                    <span class="en">Complete Forbidden City guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/forbidden-city-tickets.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🏯</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Great Wall of China</h4>
+                                <p class="work-description">
+                                    <span class="zh">长城门票及游览指南</span>
+                                    <span class="en">Great Wall tickets & guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/great-wall-of-china-tickets.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🎬</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Universal Studios Beijing</h4>
+                                <p class="work-description">
+                                    <span class="zh">北京环球影城门票指南</span>
+                                    <span class="en">Universal Studios Beijing tickets</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/universal-studios-beijing-tickets.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🏞️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Summer Palace Tickets</h4>
+                                <p class="work-description">
+                                    <span class="zh">颐和园门票预订指南</span>
+                                    <span class="en">Summer Palace visit guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/summer-palace-tickets.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🏮</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Yu Garden Tickets</h4>
+                                <p class="work-description">
+                                    <span class="zh">豫园门票及游览攻略</span>
+                                    <span class="en">Yu Garden tickets & guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/yu-garden-tickets.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🦁</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Shanghai Zoo Tickets</h4>
+                                <p class="work-description">
+                                    <span class="zh">上海动物园门票指南</span>
+                                    <span class="en">Shanghai Zoo tickets guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/shanghai-zoo-tickets.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🐅</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Shanghai Wild Animal Park</h4>
+                                <p class="work-description">
+                                    <span class="zh">上海野生动物园门票</span>
+                                    <span class="en">Shanghai Wild Animal Park tickets</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/shanghai-wild-animal-park.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🐼</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Beijing Zoo Tickets</h4>
+                                <p class="work-description">
+                                    <span class="zh">北京动物园门票指南</span>
+                                    <span class="en">Beijing Zoo tickets guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/beijing-zoo-tickets.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🦒</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Chimelong Safari Park</h4>
+                                <p class="work-description">
+                                    <span class="zh">长隆野生动物园门票</span>
+                                    <span class="en">Chimelong Safari Park tickets</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/chimelong-safari-park.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="attraction">
+                            <div class="work-preview">
+                                <div class="work-icon">🎭</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Warner Bros Studio Tour Tokyo</h4>
+                                <p class="work-description">
+                                    <span class="zh">东京华纳兄弟工作室门票</span>
+                                    <span class="en">Warner Bros Studio Tour Tokyo tickets</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/attraction/warner-bros-studio-tour-tokyo-tickets.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- eSIM Category -->
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">📱</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>eSIM Complete Guide</h4>
+                                <p class="work-description">
+                                    <span class="zh">eSIM完整使用指南</span>
+                                    <span class="en">Complete eSIM usage guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/esim.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🇨🇳</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China eSIM Guide</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国eSIM购买使用指南</span>
+                                    <span class="en">China eSIM purchase guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/china-esim.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🇹🇭</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Thailand eSIM</h4>
+                                <p class="work-description">
+                                    <span class="zh">泰国eSIM完整指南</span>
+                                    <span class="en">Thailand eSIM complete guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/esim-thailand.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🇰🇷</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>South Korea eSIM</h4>
+                                <p class="work-description">
+                                    <span class="zh">韩国eSIM使用指南</span>
+                                    <span class="en">South Korea eSIM guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/esim-south-korea.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🇯🇵</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Japan eSIM Guide</h4>
+                                <p class="work-description">
+                                    <span class="zh">日本eSIM购买指南</span>
+                                    <span class="en">Japan eSIM purchase guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/esim-japan.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🇭🇰</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Hong Kong eSIM</h4>
+                                <p class="work-description">
+                                    <span class="zh">香港eSIM使用指南</span>
+                                    <span class="en">Hong Kong eSIM guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/esim-hong-kong.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🇺🇸</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>USA eSIM Guide</h4>
+                                <p class="work-description">
+                                    <span class="zh">美国eSIM购买指南</span>
+                                    <span class="en">USA eSIM purchase guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/esim-usa.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">💳</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Alipay Usage Guide</h4>
+                                <p class="work-description">
+                                    <span class="zh">支付宝使用完整指南</span>
+                                    <span class="en">Complete Alipay guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/how-to-use-alipay.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">💬</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>WeChat Pay for Foreigners</h4>
+                                <p class="work-description">
+                                    <span class="zh">外国人微信支付指南</span>
+                                    <span class="en">WeChat Pay guide for foreigners</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/wechat-pay-for-foreigners.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🗺️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Map Apps</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国地图APP完整指南</span>
+                                    <span class="en">Complete China map apps guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/china-map-app.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🗺️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Baidu Map App</h4>
+                                <p class="work-description">
+                                    <span class="zh">百度地图APP使用指南</span>
+                                    <span class="en">Baidu Map app guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/baidu-map-app.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🗺️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Gaode Map</h4>
+                                <p class="work-description">
+                                    <span class="zh">高德地图使用指南</span>
+                                    <span class="en">Gaode Map usage guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/gaode-map.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🍎</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Apple Map in China</h4>
+                                <p class="work-description">
+                                    <span class="zh">苹果地图中国版指南</span>
+                                    <span class="en">Apple Map China guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/apple-map-in-china.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🚕</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Taxi App</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国打车APP指南</span>
+                                    <span class="en">China taxi app guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/china-taxi-app.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">💰</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Payments App</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国支付APP完整指南</span>
+                                    <span class="en">China payments app guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/china-payments-app.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">📶</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Pocket WiFi China</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国随身WiFi指南</span>
+                                    <span class="en">Pocket WiFi China guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/pocket-wifi-china.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="esim">
+                            <div class="work-preview">
+                                <div class="work-icon">🇹🇭</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Thailand SIM Card</h4>
+                                <p class="work-description">
+                                    <span class="zh">泰国SIM卡购买指南</span>
+                                    <span class="en">Thailand SIM card guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/phone/thailand-sim-card.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Transport Category -->
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">✈️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Xiamen Airport</h4>
+                                <p class="work-description">
+                                    <span class="zh">厦门机场完整指南</span>
+                                    <span class="en">Xiamen Airport complete guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/xiamen-airport.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🚄</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Seoul AREX Guide</h4>
+                                <p class="work-description">
+                                    <span class="zh">首尔机场快线完整指南</span>
+                                    <span class="en">Seoul AREX complete guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/arex.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🚇</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Shanghai Metro Guide</h4>
+                                <p class="work-description">
+                                    <span class="zh">上海地铁完整乘坐指南</span>
+                                    <span class="en">Complete Shanghai subway guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/shanghai-metro.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🚇</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Chengdu Metro</h4>
+                                <p class="work-description">
+                                    <span class="zh">成都地铁乘坐指南</span>
+                                    <span class="en">Chengdu Metro guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/chengdu-metro.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🚕</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Taxi</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国出租车使用指南</span>
+                                    <span class="en">China taxi usage guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/china-taxi.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🚗</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>How to Use Didi in China</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国滴滴使用指南</span>
+                                    <span class="en">Didi usage guide in China</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/how-to-use-didi-in-china.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🚆</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Train Booking</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国火车票预订指南</span>
+                                    <span class="en">China train booking guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/train/china-train-booking.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🎫</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Train Ticket</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国火车票购买指南</span>
+                                    <span class="en">China train ticket guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/train/china-train-ticket.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🗺️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Guangzhou Metro Map</h4>
+                                <p class="work-description">
+                                    <span class="zh">广州地铁地图指南</span>
+                                    <span class="en">Guangzhou Metro map guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/guangzhou-metro-map.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🚇</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Chongqing Metro</h4>
+                                <p class="work-description">
+                                    <span class="zh">重庆地铁乘坐指南</span>
+                                    <span class="en">Chongqing Metro guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/chongqing-metro.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">✈️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Chengdu Airport</h4>
+                                <p class="work-description">
+                                    <span class="zh">成都机场完整指南</span>
+                                    <span class="en">Chengdu Airport guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/chengdu-airport.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🏖️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Sanya Airport</h4>
+                                <p class="work-description">
+                                    <span class="zh">三亚机场完整指南</span>
+                                    <span class="en">Sanya Airport guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/sanya-airport.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🏔️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Kunming Airport</h4>
+                                <p class="work-description">
+                                    <span class="zh">昆明机场完整指南</span>
+                                    <span class="en">Kunming Airport guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/kunming-airport.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="transport">
+                            <div class="work-preview">
+                                <div class="work-icon">🇰🇷</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Gimpo Airport to Seoul</h4>
+                                <p class="work-description">
+                                    <span class="zh">金浦机场到首尔交通</span>
+                                    <span class="en">Gimpo Airport to Seoul transport</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/transport/gimpo-airport-to-seoul.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Info Category -->
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🌸</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Best Time to Visit China</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国最佳旅游时间指南</span>
+                                    <span class="en">China travel timing guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/info/best-time-to-visit-china.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🏙️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Best Time to Visit Shanghai</h4>
+                                <p class="work-description">
+                                    <span class="zh">上海最佳旅游时间</span>
+                                    <span class="en">Shanghai travel timing guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/info/best-time-to-visit-shanghai.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">💰</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip to China Cost</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国旅游费用完整指南</span>
+                                    <span class="en">Complete China travel cost guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/info/trip-to-china-cost.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🔌</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Power Plug Guide</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国电源插头使用指南</span>
+                                    <span class="en">China power plug guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/info/china-plug.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🎫</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Canton Fair Registration</h4>
+                                <p class="work-description">
+                                    <span class="zh">广交会注册参观指南</span>
+                                    <span class="en">Canton Fair registration guide</span>
+                                </p>
+                                <a href="https://www.trip.com/hot/articles/canton-fair-registration.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🎯</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip.com Promo Code</h4>
+                                <p class="work-description">
+                                    <span class="zh">Trip.com优惠码使用指南</span>
+                                    <span class="en">Trip.com promo code guide</span>
+                                </p>
+                                <a href="https://www.trip.com/hot/articles/trip.com-promo-code.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">💰</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Tax Refund</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国退税完整指南</span>
+                                    <span class="en">China tax refund guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/info/china-tax-refund.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🛡️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Travel Insurance China</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国旅游保险指南</span>
+                                    <span class="en">China travel insurance guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/info/travel-insurance-china.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">💡</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Travel Tips</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国旅游小贴士</span>
+                                    <span class="en">China travel tips guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/info/china-travel-tips.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🚌</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Transport App</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国交通APP指南</span>
+                                    <span class="en">China transport app guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/info/china-transport-app.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🍜</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Food App</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国美食APP指南</span>
+                                    <span class="en">China food app guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/info/china-food-app.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">💳</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip.com Payment Methods</h4>
+                                <p class="work-description">
+                                    <span class="zh">Trip.com支付方式指南</span>
+                                    <span class="en">Trip.com payment methods guide</span>
+                                </p>
+                                <a href="https://www.trip.com/ask/questions/trip.com-payment-methods.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">📄</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip.com Passport Change</h4>
+                                <p class="work-description">
+                                    <span class="zh">Trip.com护照变更指南</span>
+                                    <span class="en">Trip.com passport change guide</span>
+                                </p>
+                                <a href="https://www.trip.com/ask/questions/trip.com-passport-change.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">💺</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip.com Seat Selection</h4>
+                                <p class="work-description">
+                                    <span class="zh">Trip.com选座指南</span>
+                                    <span class="en">Trip.com seat selection guide</span>
+                                </p>
+                                <a href="https://www.trip.com/ask/questions/trip.com-seat-selection.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🧾</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip.com E-Receipt</h4>
+                                <p class="work-description">
+                                    <span class="zh">Trip.com电子收据指南</span>
+                                    <span class="en">Trip.com e-receipt guide</span>
+                                </p>
+                                <a href="https://www.trip.com/ask/questions/trip.com-e-receipt.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🚗</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip.com Car Rental</h4>
+                                <p class="work-description">
+                                    <span class="zh">Trip.com租车服务指南</span>
+                                    <span class="en">Trip.com car rental guide</span>
+                                </p>
+                                <a href="https://www.trip.com/ask/questions/trip.com-car-rental.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">💳</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Trip.com Credit Card</h4>
+                                <p class="work-description">
+                                    <span class="zh">Trip.com信用卡服务</span>
+                                    <span class="en">Trip.com credit card guide</span>
+                                </p>
+                                <a href="https://www.trip.com/ask/questions/trip.com-credit-card.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">💀</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Day of the Dead</h4>
+                                <p class="work-description">
+                                    <span class="zh">亡灵节旅游指南</span>
+                                    <span class="en">Day of the Dead travel guide</span>
+                                </p>
+                                <a href="https://www.trip.com/hot/articles/day-of-the-dead.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">✈️</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>China Visa Free Transit</h4>
+                                <p class="work-description">
+                                    <span class="zh">中国免签过境指南</span>
+                                    <span class="en">China visa-free transit guide</span>
+                                </p>
+                                <a href="https://www.trip.com/hot/tourist-guide/china-visa-free-transit.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="seo-work-card" data-category="info">
+                            <div class="work-preview">
+                                <div class="work-icon">🎁</div>
+                            </div>
+                            <div class="work-info">
+                                <h4>Shanghai Popmart</h4>
+                                <p class="work-description">
+                                    <span class="zh">上海泡泡玛特购物指南</span>
+                                    <span class="en">Shanghai Popmart shopping guide</span>
+                                </p>
+                                <a href="https://www.trip.com/guide/shopping/shanghai-popmart.html" target="_blank" class="work-link">
+                                    <span class="zh">查看页面</span>
+                                    <span class="en">View Page</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Media Section -->
+            <section id="media" class="section">
+                <h2 class="section-title">
+                    <span class="zh">自媒体经历</span>
+                    <span class="en">Media Experience</span>
+                </h2>
+                <div class="media-content">
+                    <div class="media-experience">
+                        <h3>
+                            <span class="zh">番茄蛋MCN有限公司</span>
+                            <span class="en">FanQieDan MCN Company</span>
+                        </h3>
+                        <div class="experience-date">2022.03 - 2023.07</div>
+                        <div class="media-achievements">
+                            <div class="achievement-item">
+                                <div class="achievement-icon">B</div>
+                                <div class="achievement-content">
+                                    <p>
+                                        <span class="zh">作为B站音乐区UP主，发布2条视频粉丝达2w，首条视频播放量40w+</span>
+                                        <span class="en">As a Bilibili music creator, gained 20K followers with just 2 videos, first video 400K+ views</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-icon">W</div>
+                                <div class="achievement-content">
+                                    <p>
+                                        <span class="zh">微博粉丝2k+</span>
+                                        <span class="en">2K+ Weibo followers</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-icon">X</div>
+                                <div class="achievement-content">
+                                    <p>
+                                        <span class="zh">小红书粉丝1k</span>
+                                        <span class="en">1K Xiaohongshu followers</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kol-development">
+                            <h4>
+                                <span class="zh">KOL孵化成果</span>
+                                <span class="en">KOL Development</span>
+                            </h4>
+                            <p>
+                                <span class="zh">协助孵化B站生活区26w+粉丝UP主，负责视频剪辑、选题调研、脚本策划、商单PR建联等工作</span>
+                                <span class="en">Helped develop a Bilibili lifestyle creator to 260K+ followers, responsible for video editing, topic research, script planning, and business cooperation</span>
+                            </p>
+                            <div class="media-links">
+                                <a href="https://www.bilibili.com/video/BV14e411x7tj/" target="_blank" class="comic-button small">
+                                    <span class="zh">查看我的视频</span>
+                                    <span class="en">View My Video</span>
+                                </a>
+                                <a href="https://space.bilibili.com/177984856/" target="_blank" class="comic-button small">
+                                    <span class="zh">孵化达人主页</span>
+                                    <span class="en">Nurtured Creator</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2 class="section-title">
+                    <span class="zh">联系我</span>
+                    <span class="en">Contact Me</span>
+                </h2>
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <div class="form-group">
+                            <label for="name">
+                                <span class="zh">姓名</span>
+                                <span class="en">Name</span>
+                            </label>
+                            <input type="text" id="name" class="comic-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                <span class="zh">邮箱</span>
+                                <span class="en">Email</span>
+                            </label>
+                            <input type="email" id="email" class="comic-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">
+                                <span class="zh">留言</span>
+                                <span class="en">Message</span>
+                            </label>
+                            <textarea id="message" class="comic-input"></textarea>
+                        </div>
+                        <button class="comic-button">
+                            <span class="zh">发送</span>
+                            <span class="en">Send</span>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" id="instagram-link">
+                            <div class="social-icon">📷</div>
+                            <span>Instagram: @bethybabae</span>
+                        </a>
+                        <a href="#" class="social-link" id="weibo-link">
+                            <div class="social-icon">W</div>
+                            <span>Weibo</span>
+                        </a>
+                        <a href="#" class="social-link" id="xiaohongshu-link">
+                            <div class="social-icon">X</div>
+                            <span>Xiaohongshu</span>
+                        </a>
+                        <div class="social-link" id="email-copy" style="cursor: pointer;">
+                            <div class="social-icon">@</div>
+                            <span>Email: 909807231@qq.com</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="copyright">
+                    <span class="zh">© 黄澜 版权所有</span>
+                    <span class="en">© Huang Lan. All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast-notification">
+        <div class="toast-content">
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" class="back-to-top-btn">
+        <div class="arrow-up">↑</div>
+    </div>
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+    // Splash screen with Memphis typewriter animation
+    const splashScreen = document.getElementById('splash-screen');
+    const mainContent = document.getElementById('main-content');
+    const typewriterElement = document.getElementById('typewriter-text');
+    
+    const typewriterText = '(Huang Lan | 黄澜)';
+    let typewriterIndex = 0;
+    
+    function typeWriter() {
+        if (typewriterIndex < typewriterText.length) {
+            typewriterElement.textContent += typewriterText.charAt(typewriterIndex);
+            typewriterIndex++;
+            setTimeout(typeWriter, 80 + Math.random() * 40); // Random typing speed for natural effect
+        } else {
+            // Keep cursor blinking for 0.5s pause, then hide
+            setTimeout(() => {
+                const cursor = document.querySelector('.typewriter-cursor');
+                if (cursor) cursor.style.display = 'none';
+            }, 1500); // Changed from 1000 to 1500 for 0.5s more pause
+        }
+    }
+    
+    // Start typewriter effect after handwriting appears
+    setTimeout(() => {
+        typeWriter();
+    }, 1200);
+    
+    // Hide splash screen after animation
+    setTimeout(() => {
+        splashScreen.style.opacity = '0';
+        splashScreen.style.transition = 'opacity 0.8s ease';
+        
+        setTimeout(() => {
+            splashScreen.style.display = 'none';
+            mainContent.style.display = 'block';
+            mainContent.classList.add('animate__animated', 'animate__fadeIn');
+        }, 800);
+    }, 3000); // 3 seconds total for Memphis effect
+    
+    // Language switching
+    const htmlTag = document.documentElement;
+    const zhBtn = document.getElementById('lang-zh');
+    const enBtn = document.getElementById('lang-en');
+    
+    // Set default language to Chinese
+    htmlTag.setAttribute('lang', 'zh-CN');
+    
+    zhBtn.addEventListener('click', function() {
+        htmlTag.setAttribute('lang', 'zh-CN');
+        zhBtn.classList.add('active');
+        enBtn.classList.remove('active');
+    });
+    
+    enBtn.addEventListener('click', function() {
+        htmlTag.setAttribute('lang', 'en');
+        enBtn.classList.add('active');
+        zhBtn.classList.remove('active');
+    });
+    
+    // Navigation
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const sections = document.querySelectorAll('.section');
+    
+    navTabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetSection = this.getAttribute('data-section');
+            
+            // Remove active class from all tabs and sections
+            navTabs.forEach(navTab => navTab.classList.remove('active'));
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding section
+            this.classList.add('active');
+            document.getElementById(targetSection).classList.add('active');
+        });
+    });
+    
+    // Enhanced Interactive Cat with mouse-following eyes
+    const cat = document.getElementById('interactive-cat');
+    const catSound = document.getElementById('cat-sound');
+    const pupils = document.querySelectorAll('.cat-pupil');
+    
+    let clickCount = 0;
+    let clickTimer = null;
+    let lastInteraction = Date.now();
+    
+    // Mouse-following eyes function
+    function updateCatEyes(e) {
+        const rect = cat.getBoundingClientRect();
+        const catCenterX = rect.left + rect.width / 2;
+        const catCenterY = rect.top + rect.height / 2;
+        
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        
+        const deltaX = mouseX - catCenterX;
+        const deltaY = mouseY - catCenterY;
+        
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        const maxDistance = 4; // Maximum pupil movement
+        
+        const moveX = Math.min(maxDistance, (deltaX / distance) * maxDistance * Math.min(distance / 100, 1));
+        const moveY = Math.min(maxDistance, (deltaY / distance) * maxDistance * Math.min(distance / 100, 1));
+        
+        pupils.forEach(pupil => {
+            pupil.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+        });
+    }
+    
+    // Add mouse move listener for eye tracking
+    document.addEventListener('mousemove', updateCatEyes);
+    
+    // Enhanced cat expressions and sounds
+    const catExpressions = [
+        { sound: '😸 喵~ 你好！', class: 'happy' },
+        { sound: '😺 咕噜咕噜~', class: 'nuzzle' },
+        { sound: '🐱 哈基米~', class: 'happy' },
+        { sound: '😽 mua~', class: 'nuzzle' },
+        { sound: '😹 哈哈哈', class: 'happy' },
+        { sound: '😾 哼！', class: 'angry' },
+        { sound: '🙀 哇！', class: 'surprised' },
+        { sound: '😴 呼噜噜...', class: 'sleeping' },
+        { sound: '🐾 踏踏踏', class: 'scratching' },
+        { sound: '😋 好吃~', class: 'happy' },
+        { sound: '🎣 想要小鱼干~', class: 'hungry' },
+        { sound: '💤 困困...', class: 'sleepy' },
+        { sound: '😵‍💫 好晕...', class: 'dizzy' },
+        { sound: '🥰 爱你哦~', class: 'love' },
+        { sound: '😸 快摸摸我！', class: 'nuzzle' },
+        { sound: '🐟 饿了饿了~', class: 'hungry' }
+    ];
+    
+    // Random idle animations
+    function catIdleAnimation() {
+        const now = Date.now();
+        if (now - lastInteraction > 5000) { // 5 seconds of no interaction
+            const randomExpression = catExpressions[Math.floor(Math.random() * catExpressions.length)];
+            showCatExpression(randomExpression.sound, randomExpression.class);
+        }
+        
+        setTimeout(catIdleAnimation, Math.random() * 10000 + 5000); // Random between 5-15 seconds
+    }
+    
+    // Start idle animations
+    setTimeout(catIdleAnimation, 10000);
+    
+    // Cat hover effects
+    cat.addEventListener('mouseenter', function() {
+        lastInteraction = Date.now();
+        const greetings = [
+            { sound: '😸 喵~ 你来啦！', class: 'nuzzle' },
+            { sound: '😺 咕噜咕噜~', class: 'happy' },
+            { sound: '🐱 哈基米~', class: 'nuzzle' }
+        ];
+        const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+        showCatExpression(greeting.sound, greeting.class);
+    });
+    
+    // Cat click effects with more variety
+    cat.addEventListener('click', function() {
+        lastInteraction = Date.now();
+        clickCount++;
+        
+        if (clickTimer) {
+            clearTimeout(clickTimer);
+        }
+        
+        if (clickCount >= 5) {
+            // Angry cat after 5+ clicks
+            showCatExpression('😾 哼！别戳了！', 'angry');
+            clickCount = 0;
+        } else if (clickCount === 3) {
+            // Scratching animation
+            showCatExpression('🐾 磨爪子~', 'scratching');
+        } else {
+            // Happy responses
+            const happyResponses = [
+                { sound: '😸 喵~', class: 'happy' },
+                { sound: '😽 mua~', class: 'nuzzle' },
+                { sound: '😹 嘻嘻~', class: 'happy' }
+            ];
+            const response = happyResponses[Math.floor(Math.random() * happyResponses.length)];
+            showCatExpression(response.sound, response.class);
+        }
+        
+        // Reset click count after 3 seconds
+        clickTimer = setTimeout(() => {
+            clickCount = 0;
+        }, 3000);
+    });
+    
+    // Double click for special interaction
+    let clickTimeout = null;
+    cat.addEventListener('dblclick', function() {
+        lastInteraction = Date.now();
+        if (clickTimeout) {
+            clearTimeout(clickTimeout);
+            clickTimeout = null;
+        }
+        showCatExpression('🥰 好开心！双击了喵仔！', 'happy');
+    });
+    
+    // Long press for sleep
+    let pressTimer = null;
+    cat.addEventListener('mousedown', function() {
+        pressTimer = setTimeout(() => {
+            lastInteraction = Date.now();
+            showCatExpression('😴 要睡觉了...', 'sleeping');
+        }, 2000);
+    });
+    
+    cat.addEventListener('mouseup', function() {
+        if (pressTimer) {
+            clearTimeout(pressTimer);
+            pressTimer = null;
+        }
+    });
+    
+    cat.addEventListener('mouseleave', function() {
+        if (pressTimer) {
+            clearTimeout(pressTimer);
+            pressTimer = null;
+        }
+    });
+    
+    // Cat mouth hover (licking) - no bubble for licking
+    const catMouth = document.querySelector('.cat-mouth');
+    catMouth.addEventListener('mouseenter', function() {
+        lastInteraction = Date.now();
+        cat.classList.add('lick');
+        
+        setTimeout(() => {
+            cat.classList.remove('lick');
+        }, 500);
+    });
+    
+    function showCatExpression(message, expressionClass) {
+        // Remove all expression classes
+        cat.classList.remove('happy', 'angry', 'sleeping', 'scratching', 'nuzzle', 'sleepy', 'hungry', 'startled');
+        
+        // Add new expression class
+        if (expressionClass) {
+            cat.classList.add(expressionClass);
+            
+            // Remove class after animation
+            setTimeout(() => {
+                cat.classList.remove(expressionClass);
+            }, expressionClass === 'sleeping' ? 5000 : 1000);
+        }
+        
+        // Show message
+        catSound.textContent = message;
+        catSound.classList.add('show');
+        
+        setTimeout(() => {
+            catSound.classList.remove('show');
+        }, 2500);
+    }
+    
+    // SEO Category filtering
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    const seoCards = document.querySelectorAll('.seo-work-card');
+    
+    categoryTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Update active tab
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter cards
+            seoCards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.5s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // Form submission
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            
+            // Simple validation
+            if (!nameInput.value || !emailInput.value || !messageInput.value) {
+                showMemphisPopup(
+                    htmlTag.getAttribute('lang') === 'zh-CN' 
+                        ? '😅 请填写所有字段哦！' 
+                        : '😅 Please fill in all fields!',
+                    'error'
+                );
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                showMemphisPopup(
+                    htmlTag.getAttribute('lang') === 'zh-CN' 
+                        ? '😅 请输入有效的电子邮件地址！' 
+                        : '😅 Please enter a valid email address!',
+                    'error'
+                );
+                return;
+            }
+            
+            // Create mailto link
+            const subject = encodeURIComponent(htmlTag.getAttribute('lang') === 'zh-CN' ? '来自个人网站的联系' : 'Contact from Personal Website');
+            const body = encodeURIComponent(`
+Name: ${nameInput.value}
+Email: ${emailInput.value}
+Message: ${messageInput.value}
+            `);
+            const mailtoLink = `mailto:909807231@qq.com?subject=${subject}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show Memphis popup
+            showMemphisPopup(
+                htmlTag.getAttribute('lang') === 'zh-CN' 
+                    ? '🎉 太棒了！邮件客户端已打开\n请发送您的消息～' 
+                    : '🎉 Great! Email client opened\nPlease send your message~',
+                'success'
+            );
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+    
+    // Toast notification
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        const toastMessage = toast.querySelector('.toast-message');
+        
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+    
+    // Skill bubble interactions
+    const skillBubbles = document.querySelectorAll('.skill-bubble');
+    
+    skillBubbles.forEach(bubble => {
+        bubble.addEventListener('mouseenter', function() {
+            this.style.transform = `rotate(${Math.random() * 10 - 5}deg) scale(1.1)`;
+        });
+        
+        bubble.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+        
+        bubble.addEventListener('click', function() {
+            this.style.animation = 'wiggle 0.5s ease';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 500);
+        });
+    });
+    
+    // Comic button press effects
+    const comicButtons = document.querySelectorAll('.comic-button');
+    
+    comicButtons.forEach(button => {
+        button.addEventListener('mousedown', function() {
+            this.style.transform = 'rotate(0deg) translateY(2px)';
+            this.style.boxShadow = '2px 2px 0 var(--primary-yellow)';
+        });
+        
+        button.addEventListener('mouseup', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+        });
+    });
+    
+    // Project card hover effects
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'rotate(0deg) translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+    
+    // Publication item hover effects
+    const publicationItems = document.querySelectorAll('.publication-item');
+    
+    publicationItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'rotate(0deg) translateX(5px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+    
+    // SEO work card hover effects
+    const seoWorkCards = document.querySelectorAll('.seo-work-card');
+    
+    seoWorkCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'rotate(0deg) translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+    
+    // Random floating elements animation
+    function createFloatingElement() {
+        const shapes = ['●', '▲', '■', '★', '♦'];
+        const colors = ['var(--primary-yellow)', 'var(--primary-blue)', 'var(--accent-blue-light)', 'var(--memphis-red)', 'var(--memphis-green)'];
+        
+        const element = document.createElement('div');
+        element.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+        element.style.position = 'fixed';
+        element.style.left = Math.random() * 100 + 'vw';
+        element.style.top = '100vh';
+        element.style.color = colors[Math.floor(Math.random() * colors.length)];
+        element.style.fontSize = Math.random() * 20 + 10 + 'px';
+        element.style.zIndex = '-1';
+        element.style.pointerEvents = 'none';
+        element.style.opacity = '0.6';
+        element.style.animation = `floatUp ${Math.random() * 10 + 10}s linear forwards`;
+        
+        document.body.appendChild(element);
+        
+        setTimeout(() => {
+            element.remove();
+        }, 20000);
+    }
+    
+    // Add floating elements periodically
+    setInterval(createFloatingElement, 3000);
+    
+    // Add CSS for floating animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes floatUp {
+            to {
+                transform: translateY(-120vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Parallax effect for ocean background
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const whales = document.querySelectorAll('.whale');
+        const waves = document.querySelectorAll('.wave');
+        
+        whales.forEach((whale, index) => {
+            whale.style.transform = `translateX(${scrolled * (0.1 + index * 0.05)}px)`;
+        });
+        
+        waves.forEach((wave, index) => {
+            wave.style.transform = `translateX(-50%) translateY(${scrolled * (0.05 + index * 0.02)}px)`;
+        });
+    });
+    
+    // Add some random movement to Memphis elements
+    function addRandomMotion() {
+        const memphisElements = document.querySelectorAll('.skill-bubble, .project-card, .publication-item, .seo-work-card');
+        
+        if (memphisElements.length > 0) {
+            const randomIndex = Math.floor(Math.random() * memphisElements.length);
+            const element = memphisElements[randomIndex];
+            
+            const originalTransform = element.style.transform;
+            element.style.transition = 'transform 0.5s ease';
+            element.style.transform = `${originalTransform} rotate(${Math.random() * 4 - 2}deg) translateY(-3px)`;
+            
+            setTimeout(() => {
+                element.style.transform = originalTransform;
+            }, 500);
+        }
+        
+        // Schedule next animation
+        setTimeout(addRandomMotion, Math.random() * 5000 + 3000);
+    }
+    
+    // Start random motions after page load
+    setTimeout(addRandomMotion, 2000);
+    
+    // Old logo click effect - REMOVED to avoid conflict with new cycling functionality
+    /*
+    // Logo click effect
+    const logo = document.querySelector('.logo-text');
+    logo.addEventListener('click', function() {
+        this.style.animation = 'spin 1s ease';
+        setTimeout(() => {
+            this.style.animation = '';
+        }, 1000);
+    });
+    */
+    
+    // Add spin animation
+    const spinStyle = document.createElement('style');
+    spinStyle.textContent = `
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(spinStyle);
+    
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Initialize page
+    console.log('🎉 Huang Lan\'s Portfolio Loaded Successfully!');
+    console.log('🐱 Try interacting with the cat!');
+    console.log('🌊 Enjoy the ocean background!');
+    
+    // Project tabs functionality
+    const projectTabs = document.querySelectorAll('.project-tab');
+    const projectContents = document.querySelectorAll('.project-content');
+    
+    projectTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetProject = this.getAttribute('data-project');
+            
+            // Remove active class from all tabs and contents
+            projectTabs.forEach(t => t.classList.remove('active'));
+            projectContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetProject + '-content').classList.add('active');
+        });
+    });
+    
+    // HL Logo cycling functionality
+    const logoElement = document.querySelector('.logo-text');
+    const logoTexts = ['HL', 'Huang Lan', 'Bethybabe', '黄澜'];
+    let currentLogoIndex = 0;
+    
+    logoElement.addEventListener('click', function() {
+        currentLogoIndex = (currentLogoIndex + 1) % logoTexts.length;
+        this.textContent = logoTexts[currentLogoIndex];
+        
+        // Add rotation animation
+        this.style.animation = 'spin 0.6s ease';
+        setTimeout(() => {
+            this.style.animation = '';
+        }, 600);
+    });
+    
+    // Email copy functionality with Memphis popup
+    const emailCopyElement = document.getElementById('email-copy');
+    
+    if (emailCopyElement) {
+        emailCopyElement.addEventListener('click', function() {
+            const email = '909807231@qq.com';
+            
+            // Try to copy to clipboard
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(email).then(() => {
+                    showMemphisPopup(
+                        htmlTag.getAttribute('lang') === 'zh-CN' 
+                            ? '📧 邮箱已复制！\n' + email 
+                            : '📧 Email copied!\n' + email,
+                        'success'
+                    );
+                }).catch(() => {
+                    showMemphisPopup(
+                        htmlTag.getAttribute('lang') === 'zh-CN' 
+                            ? '📧 我的邮箱：\n' + email 
+                            : '📧 My email:\n' + email,
+                        'info'
+                    );
+                });
+            } else {
+                showMemphisPopup(
+                    htmlTag.getAttribute('lang') === 'zh-CN' 
+                        ? '📧 我的邮箱：\n' + email 
+                        : '📧 My email:\n' + email,
+                    'info'
+                );
+            }
+        });
+    }
+    
+    // Memphis-style popup function
+    function showMemphisPopup(message, type = 'info') {
+        // Remove existing popup if any
+        const existingPopup = document.querySelector('.memphis-popup');
+        if (existingPopup) {
+            existingPopup.remove();
+        }
+        
+        const popup = document.createElement('div');
+        popup.className = 'memphis-popup';
+        popup.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-2deg);
+            background: ${type === 'success' ? 'var(--memphis-green)' : type === 'error' ? 'var(--memphis-red)' : 'var(--primary-yellow)'};
+            border: 4px solid var(--dark-color);
+            border-radius: 20px;
+            padding: 25px 35px;
+            box-shadow: 8px 8px 0 var(--primary-blue);
+            z-index: 10000;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            text-align: center;
+            white-space: pre-line;
+            max-width: 350px;
+            animation: memphisPopupIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        `;
+        
+        popup.textContent = message;
+        
+        // Add close button
+        const closeBtn = document.createElement('div');
+        closeBtn.textContent = '✕';
+        closeBtn.style.cssText = `
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 30px;
+            height: 30px;
+            background: var(--memphis-red);
+            border: 3px solid var(--dark-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        `;
+        
+        closeBtn.addEventListener('click', () => {
+            popup.style.animation = 'memphisPopupOut 0.3s ease forwards';
+            setTimeout(() => popup.remove(), 300);
+        });
+        
+        popup.appendChild(closeBtn);
+        document.body.appendChild(popup);
+        
+        // Auto close after 4 seconds
+        setTimeout(() => {
+            if (popup.parentNode) {
+                popup.style.animation = 'memphisPopupOut 0.3s ease forwards';
+                setTimeout(() => popup.remove(), 300);
+            }
+        }, 4000);
+    }
+    
+    // Add Memphis popup animations to CSS
+    const memphisPopupStyle = document.createElement('style');
+    memphisPopupStyle.textContent = `
+        @keyframes memphisPopupIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) rotate(-2deg) scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotate(-2deg) scale(1);
+            }
+        }
+        
+        @keyframes memphisPopupOut {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotate(-2deg) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) rotate(-2deg) scale(0.5);
+            }
+        }
+    `;
+    document.head.appendChild(memphisPopupStyle);
+    
+    // 🐱 添加猫咪前爪
+    setTimeout(() => {
+        const catBody = document.querySelector('.cat-body');
+        if (catBody && !catBody.querySelector('.cat-front-paws')) {
+            const frontPawsDiv = document.createElement('div');
+            frontPawsDiv.className = 'cat-front-paws';
+            
+            const leftPaw = document.createElement('div');
+            leftPaw.className = 'cat-front-paw cat-front-paw-left';
+            
+            const rightPaw = document.createElement('div');
+            rightPaw.className = 'cat-front-paw cat-front-paw-right';
+            
+            frontPawsDiv.appendChild(leftPaw);
+            frontPawsDiv.appendChild(rightPaw);
+            
+            catBody.insertBefore(frontPawsDiv, catBody.firstChild);
+            
+            console.log('🐱 猫猫前爪已添加！');
+        }
+    }, 500);
+    
+    // 🎨 添加统一的标题样式
+    const unifiedHeaderStyle = document.createElement('style');
+    unifiedHeaderStyle.textContent = `
+        /* 统一标题样式 */
+        .education-box h3,
+        .skills-box h3 {
+            font-family: var(--font-heading) !important;
+            font-size: 1.4rem !important;
+            color: var(--primary-blue) !important;
+            margin-bottom: 20px !important;
+            position: relative !important;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.1) !important;
+        }
+        
+        /* 移除多余装饰 */
+        .education-box::after,
+        .skills-box::after,
+        .education-item::after,
+        .publications-note::after,
+        .education-box h3::after,
+        .skills-box h3::after,
+        .year::before,
+        .year::after,
+        .degree::before {
+            display: none !important;
+        }
+    `;
+    document.head.appendChild(unifiedHeaderStyle);
+    
+    console.log('🎨 统一卡片设计已优化！');
+    console.log('✅ 移除了过多装饰元素');
+    console.log('✅ 统一了卡片风格');
+    console.log('✅ 优化了SEO作品卡片排版');
+    console.log('✅ 保持了emoji图标的大小和位置');
+    
+    // 🚀 回到顶部按钮功能
+    const backToTopBtn = document.getElementById('back-to-top');
+    let isScrolling = false;
+    
+    // 滚动检测 - 半屏高度后显示按钮
+    function handleScroll() {
+        if (isScrolling) return;
+        
+        isScrolling = true;
+        requestAnimationFrame(() => {
+            const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+            const halfScreenHeight = window.innerHeight * 0.5; // 改为半屏高度
+            
+            if (scrollY > halfScreenHeight) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+            
+            isScrolling = false;
+        });
+    }
+    
+    // 监听滚动事件
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // 回到当前活跃tab顶部功能
+    function scrollToCurrentSectionTop() {
+        // 直接回到页面最顶部
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    
+    // 点击事件 - 添加回弹动画
+    backToTopBtn.addEventListener('click', function() {
+        // 添加点击动画
+        this.classList.add('clicked');
+        
+        // 执行滚动
+        scrollToCurrentSectionTop();
+        
+        // 移除动画类
+        setTimeout(() => {
+            this.classList.remove('clicked');
+        }, 600);
+    });
+    
+    // 初始化时检查滚动位置
+    handleScroll();
+    
+    // 小红书和微博点击事件
+    const xiaohongshuLink = document.getElementById('xiaohongshu-link');
+    const weiboLink = document.getElementById('weibo-link');
+    const instagramLink = document.getElementById('instagram-link');
+    
+    if (xiaohongshuLink) {
+        xiaohongshuLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 复制 bethybabe 到剪贴板
+            const xiaohongshuUsername = 'bethybabe';
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(xiaohongshuUsername).then(() => {
+                    showMemphisPopup(
+                        '📱 bethybabe复制成功！',
+                        'success'
+                    );
+                }).catch(() => {
+                    showMemphisPopup(
+                        '📱 小红书ID：bethybabe',
+                        'info'
+                    );
+                });
+            } else {
+                showMemphisPopup(
+                    '📱 小红书ID：bethybabe',
+                    'info'
+                );
+            }
+        });
+    }
+    
+    if (weiboLink) {
+        weiboLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            showMemphisPopup(
+                '🍜 馄饨老骨头',
+                'info'
+            );
+        });
+    }
+    
+    if (instagramLink) {
+        instagramLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 复制 @bethybabae 到剪贴板
+            const instagramUsername = '@bethybabae';
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(instagramUsername).then(() => {
+                    showMemphisPopup(
+                        '📷 @bethybabae复制成功！',
+                        'success'
+                    );
+                }).catch(() => {
+                    showMemphisPopup(
+                        '📷 Instagram：@bethybabae',
+                        'info'
+                    );
+                });
+            } else {
+                showMemphisPopup(
+                    '📷 Instagram：@bethybabae',
+                    'info'
+                );
+            }
+        });
+    }
+});</script>
+</body>
+</html>
