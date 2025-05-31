@@ -2353,7 +2353,7 @@ html[lang="en"] .zh {
                                 <div class="cat-tail"></div>
                             </div>
                         <div class="cat-sound" id="cat-sound">😸 喵~</div>
-                        <div class="cat-name" style="margin-top: 10px; text-align: center; font-size: 0.8rem; color: var(--primary-blue); font-weight: bold;">喵仔</div>
+                        <div class="cat-name" style="margin-top: 10px; text-align: center; font-size: 0.8rem; color: var(--primary-blue); font-weight: bold;">喵仔 | Meowzy</div>
                     </div>
                 </div>
             </section>
@@ -4117,7 +4117,7 @@ html[lang="en"] .zh {
         } else {
             // Happy responses
             const happyResponses = [
-                { sound: '😸 喵~', class: 'happy' },
+                { sound: '😸 喵叽~', class: 'happy' },
                 { sound: '😽 mua~', class: 'nuzzle' },
                 { sound: '😹 666哥们~', class: 'happy' }
             ];
